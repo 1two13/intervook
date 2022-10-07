@@ -3,7 +3,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function TopFixedBar() {
   return (
-    <div>
+    <div className="sticky top-0 h-[75px] bg-[white]">
       <div className="flex w-[80%] h-[75px] m-auto items-center justify-between">
         <div className="text-[36px]">고토리북</div>
 
@@ -23,7 +23,7 @@ function TopFixedBar() {
         </div>
       </div>
 
-      <div className="border-b-[1px] border-b-deepGray"></div>
+      <div className="border-b-[1px] border-b-[#dbdbdb]"></div>
     </div>
   );
 }
