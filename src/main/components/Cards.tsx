@@ -19,7 +19,7 @@ function Cards() {
       </div>
 
       <div className="flex mr-[10px]">
-        <div className="mr-[10px]">
+        <div className="mr-[10px] text-center">
           <button>
             <FontAwesomeIcon icon={faThumbsUp} size="2x" color="lightGreen" />
           </button>
