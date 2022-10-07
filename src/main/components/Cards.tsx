@@ -4,7 +4,7 @@ import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 function Cards() {
   return (
-    <div className="flex w-[70%] m-0 m-auto mt-[18px] mb-[30px] pt-[5px] justify-between text-deepGray shadow-md">
+    <div className="flex mt-[18px] mb-[30px] pt-[5px] justify-between text-deepGray shadow-md">
       <div className="ml-[15px] text-[12px]">
         <div className="mb-[-9px]">작성자</div>
         <div className="text-[24px] text-[black]">제목</div>

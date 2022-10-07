@@ -3,7 +3,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function SearchNBtn() {
   return (
-    <div className="w-[48%] h-[60px] m-0 m-auto mt-[30px] mb-[50px]">
+    <div className="w-[70%] h-[60px] m-auto mt-[30px] mb-[50px]">
       <input
         placeholder="생각을 공유해주세요!"
         className="w-[75%] h-[100%] pl-[25px] border-[2px] rounded-[10px] border-lightGray"
