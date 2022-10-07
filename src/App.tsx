@@ -1,7 +1,7 @@
 import "./App.css"; // tailwind 사용 위해 import
 
 import TopFixedBar from "./common/components/TopFixedBar";
-import MainPages from "./pages/MainPages";
+import MainPages from "./pages/MainPage";
 
 function App() {
   return (
