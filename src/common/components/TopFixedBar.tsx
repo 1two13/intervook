@@ -1,7 +1,14 @@
+import { useNavigate } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function TopFixedBar() {
+  const navigate = useNavigate();
+  const moveToLoginPage = () => {
+    navigate("/login");
+  };
+
   return (
     <div className="sticky top-0 h-[75px] bg-[white]">
       <div className="flex w-[80%] h-[75px] m-auto items-center justify-between">
@@ -14,7 +21,10 @@ function TopFixedBar() {
             color="lightGreen"
             className="mr-[20px]"
           />
-          <button className="w-[100px] h-[40px] mr-[20px] border-[1px] rounded-[10px] border-deepGray">
+          <button
+            className="w-[100px] h-[40px] mr-[20px] border-[1px] rounded-[10px] border-deepGray"
+            onClick={moveToLoginPage}
+          >
             로그인
           </button>
           <button className="w-[100px] h-[40px] rounded-[10px] bg-lightGreen text-[white]">
