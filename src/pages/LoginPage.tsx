@@ -1,12 +1,14 @@
 import Hr from "../login/components/Hr";
-import Input from "../login/components/Input";
+import Input from "../common/components/Input";
 import Button from "../login/components/Button";
+import H1 from "../common/components/H1";
+import LoginNJoinBox from "../common/components/LoginNJoinBox";
 
 function LoginPage() {
   return (
     <div className="flex h-screen justify-center items-center">
-      <div className="flex flex-col w-[30%] h-[69%] justify-center items-center border-[0.7px] border-deepGray rounded-[15px] bg-[white]">
-        <h1 className="mb-[25px] text-[40px]">고토리북</h1>
+      <LoginNJoinBox>
+        <H1 name={"고토리북"} />
         <Input placeholder="이메일" />
         <Input placeholder="비밀번호" />
         <button className="w-[260px] h-[45px] pl-[10px] mb-[26px] text-[16px] border-[0.7px] rounded-[7px] bg-lightGreen text-[white]">
@@ -26,7 +28,7 @@ function LoginPage() {
           <Button name={"구"} />
           <Button name={"카"} />
         </div>
-      </div>
+      </LoginNJoinBox>
     </div>
   );
 }

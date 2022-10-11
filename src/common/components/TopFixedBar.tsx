@@ -8,6 +8,9 @@ function TopFixedBar() {
   const moveToLoginPage = () => {
     navigate("/login");
   };
+  const moveToJoinPage = () => {
+    navigate("/join");
+  };
 
   return (
     <div className="sticky top-0 h-[75px] bg-[white]">
@@ -27,7 +30,10 @@ function TopFixedBar() {
           >
             로그인
           </button>
-          <button className="w-[100px] h-[40px] rounded-[10px] bg-lightGreen text-[white]">
+          <button
+            className="w-[100px] h-[40px] rounded-[10px] bg-lightGreen text-[white]"
+            onClick={moveToJoinPage}
+          >
             회원가입
           </button>
         </div>
