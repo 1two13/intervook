@@ -17,5 +17,7 @@ export const request = ({ method, url, data }: IRequest) => {
     method,
     url: DOMAIN + url,
     data,
-  });
+  })
+    .then((res) => res.data)
+    .catch((err) => console.log(err));
 };

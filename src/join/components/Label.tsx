@@ -2,8 +2,8 @@ interface ITitle {
   name: string;
 }
 
-function Title({ name }: ITitle) {
+function Label({ name }: ITitle) {
   return <div className="flex w-[100%]">{name}</div>;
 }
 
-export default Title;
+export default Label;

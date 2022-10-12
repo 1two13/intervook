@@ -1,16 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
+import { RootState } from "../../reducers";
+import UnLogged from "./UnLogged";
+import Logged from "./Logged";
+
 function TopFixedBar() {
-  const navigate = useNavigate();
-  const moveToLoginPage = () => {
-    navigate("/login");
-  };
-  const moveToJoinPage = () => {
-    navigate("/join");
-  };
+  const isLogin = useSelector((state: RootState) => state.auth.isLogin);
+  // console.log(isLogin);
 
   return (
     <div className="sticky top-0 h-[75px] bg-[white]">
@@ -22,20 +21,9 @@ function TopFixedBar() {
             icon={faMagnifyingGlass}
             size="2x"
             color="lightGreen"
-            className="mr-[20px]"
           />
-          <button
-            className="w-[100px] h-[40px] mr-[20px] border-[1px] rounded-[10px] border-deepGray"
-            onClick={moveToLoginPage}
-          >
-            로그인
-          </button>
-          <button
-            className="w-[100px] h-[40px] rounded-[10px] bg-lightGreen text-[white]"
-            onClick={moveToJoinPage}
-          >
-            회원가입
-          </button>
+
+          {isLogin ? <Logged /> : <UnLogged />}
         </div>
       </div>
 
