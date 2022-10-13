@@ -13,11 +13,11 @@ import loginApi from "../api/loginApi";
 import { RootState } from "../reducers";
 
 function LoginPage() {
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
+  const [id, setId] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const navigate = useNavigate();
-  // action 함수 가져오기
+  // action 함수 가져오기, state 값 변경시킬 때
   const dispatch = useDispatch();
   // 상태 조회하기
   const state = useSelector((state: RootState) => state);
@@ -46,11 +46,13 @@ function LoginPage() {
           <Input
             placeholder="이메일"
             name="id"
+            type="text"
             onChange={(e) => setId(e.target.value)}
           />
           <Input
             placeholder="비밀번호"
             name="password"
+            type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <button className="w-[260px] h-[45px] pl-[10px] mb-[26px] text-[16px] border-[0.7px] rounded-[7px] bg-lightGreen text-[white]">
