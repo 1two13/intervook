@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import BgGreenBtn from "./BgGreenBtn";
+import BgWhiteBtn from "./BgWhiteBtn";
 
 function UnLogged() {
   const navigate = useNavigate();
@@ -11,18 +13,8 @@ function UnLogged() {
 
   return (
     <>
-      <button
-        className="w-[100px] h-[40px] mx-[20px] border-[1px] rounded-[10px] border-deepGray"
-        onClick={moveToLoginPage}
-      >
-        로그인
-      </button>
-      <button
-        className="w-[100px] h-[40px] rounded-[10px] bg-lightGreen text-[white]"
-        onClick={moveToJoinPage}
-      >
-        회원가입
-      </button>
+      <BgWhiteBtn name={"로그인"} onClick={moveToLoginPage} />
+      <BgGreenBtn name={"회원가입"} onClick={moveToJoinPage} />
     </>
   );
 }

@@ -2,16 +2,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface IIcons {
   icon: any;
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
-function Icons({ icon }: IIcons) {
+function Icons({ icon, onClick }: IIcons) {
   return (
-    <FontAwesomeIcon
-      size="2x"
-      color="lightGreen"
-      className="ml-[20px]"
-      icon={icon}
-    />
+    <div onClick={onClick}>
+      <FontAwesomeIcon
+        size="2x"
+        color="lightGreen"
+        className="ml-[20px] cursor-pointer"
+        icon={icon}
+      />
+    </div>
   );
 }
 

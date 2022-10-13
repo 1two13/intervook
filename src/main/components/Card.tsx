@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
-function Cards() {
+function Card() {
   return (
     <div className="flex mt-[18px] mb-[30px] pt-[5px] justify-between text-deepGray shadow-md bg-[white]">
       <div className="ml-[15px] text-[12px]">
@@ -34,4 +34,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default Card;
