@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+
 import BgGreenBtn from "../common/components/BgGreenBtn";
 import BgWhiteBtn from "../common/components/BgWhiteBtn";
 
@@ -8,6 +9,21 @@ function MyPage() {
   );
   const imgRef = useRef<HTMLInputElement>(null);
 
+  const onChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // 선택한 파일 정보
+    // const files = (e.currentTarget.files as FileList)[0];
+    const files = (e.target.files as FileList)[0];
+    const reader = new FileReader();
+    // console.log(files, reader);
+
+    if (files === undefined) return;
+
+    reader.readAsDataURL(files);
+    reader.onloadend = () => {
+      setImageUrl(reader.result as string);
+    };
+  };
+
   return (
     <div>
       <div className="flex h-[60px] items-center text-[25px] bg-lightGreen/50">
@@ -16,15 +32,30 @@ function MyPage() {
         </h1>
       </div>
 
-      <div className="flex flex-col mt-[90px] justify-center items-center">
-        {/* <div> */}
-        <img src={imageUrl} className="w-[18%] rounded-[50%]" />
-        {/* <input type="file" ref={imgRef}></input> */}
-        {/* </div> */}
+      <div className="flex flex-col mt-[70px] justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
+          <label className="w-[25vh] h-[25vh] rounded-[50%] border-[1px] border-lightGray cursor-pointer">
+            <img
+              src={imageUrl}
+              onClick={() => {
+                imgRef.current?.click();
+              }}
+              className="w-[100%] aspect-square rounded-[50%]"
+            />
+          </label>
+
+          <input
+            type="file"
+            ref={imgRef}
+            onChange={onChangeImage}
+            accept="image/png, image/jpg, image/jpeg"
+            className="hidden"
+          />
+        </div>
 
         <input
           placeholder="고토리"
-          className="w-[20%] py-[3px] mt-[15px] mb-[45px] text-center text-[black] bg-lightGray/50 focus:outline-none"
+          className="w-[20%] py-[3px] mt-[15px] mb-[60px] text-center text-[black] bg-lightGray/50 focus:outline-none"
         />
 
         <div className="w-[50%]">
@@ -36,7 +67,7 @@ function MyPage() {
         </div>
       </div>
 
-      <div className="float-right mr-[23.5%] mb-[150px]">
+      <div className="float-right mr-[23.5%] mb-[60px]">
         <BgGreenBtn name={"저장하기"} />
         <BgWhiteBtn name={"탈퇴하기"} />
       </div>
