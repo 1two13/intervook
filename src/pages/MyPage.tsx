@@ -19,7 +19,7 @@ function MyPage() {
     if (files === undefined) return;
 
     reader.readAsDataURL(files);
-    reader.onloadend = () => {
+    reader.onload = () => {
       setImageUrl(reader.result as string);
     };
   };
