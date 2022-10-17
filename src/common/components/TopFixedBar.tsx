@@ -1,9 +1,6 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-
 import { RootState } from "../../reducers";
 import UnLogged from "./UnLogged";
 import Logged from "./Logged";
@@ -25,12 +22,6 @@ function TopFixedBar() {
         </div>
 
         <div className="flex items-center">
-          <FontAwesomeIcon
-            icon={faMagnifyingGlass}
-            size="2x"
-            color="lightGreen"
-          />
-
           {isLogin ? <Logged /> : <UnLogged />}
         </div>
       </div>
