@@ -6,7 +6,7 @@ interface IBgWhiteBtn {
 function BgWhiteBtn({ name, onClick }: IBgWhiteBtn) {
   return (
     <button
-      className="w-[100px] h-[40px] mx-[20px] border-[1px] rounded-[10px] border-deepGray"
+      className="w-[8vw] h-[40px] mx-[20px] border-[1px] rounded-[10px] border-deepGray"
       onClick={onClick}
     >
       {name}
