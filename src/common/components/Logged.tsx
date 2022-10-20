@@ -13,20 +13,20 @@ import IsHover from "./IsHover";
 function Logged({ propFunction }: any) {
   const navigate = useNavigate();
   const [isHover, setIsHover] = useState(false);
-  const [menuToggle, setMenuToggle] = useState(false);
 
   const moveToMyPage = () => {
     navigate("/mypage");
   };
 
-  const showMenu = () => {
-    propFunction(menuToggle);
+  const showMenu = (text: any) => {
+    propFunction(text);
+    // console.log(text);
   };
 
   return (
     <>
       {/* 스크린 크기가 min보다 클 때 */}
-      {/* min보다 스크린 크기가 작을 때는 hidden, min부터는 flex*/}
+      {/* 스크린 크기가 min보다 작을 때 아이콘들을 hidden, 스크린 크기가 min보다 클 때 아이콘들 flex */}
       <div className="hidden min:flex relative">
         <Icons icon={faHeart} />
         <Icons icon={faBookmark} />
@@ -46,6 +46,7 @@ function Logged({ propFunction }: any) {
       </div>
 
       {/* 스크린 크기가 min보다 작을 때 */}
+      {/* 스크린 크기가 min보다 작을 때 아이콘 보여주기, 스크린 크기가 min보다 클 때 아이콘 hidden */}
       <div className="min:hidden">
         <FontAwesomeIcon
           size="2x"

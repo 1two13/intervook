@@ -11,7 +11,9 @@ function DropDownMenu() {
 
   const moveToMyPage = () => {
     navigate("/myPage");
+    // 드롭다운 메뉴 숨기기
     setMenuToggle(!menuToggle);
+    // console.log(menuToggle);
   };
 
   return (

@@ -13,7 +13,6 @@ module.exports = {
     },
     screens: {
       min: "530px", // @media screen and (min-width: 530px)
-      max: { max: "530px" }, // @media screen and (max-width: 530px)
     },
   },
   plugins: [],
