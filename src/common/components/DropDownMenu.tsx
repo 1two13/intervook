@@ -7,22 +7,23 @@ import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
 function DropDownMenu() {
   const navigate = useNavigate();
-  const [menuToggle, setMenuToggle] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
 
   const moveToMyPage = () => {
     navigate("/myPage");
-    // 드롭다운 메뉴 숨기기
-    setMenuToggle(!menuToggle);
-    // console.log(menuToggle);
+    // 드롭다운 메뉴 숨기기 (showMenu가 false로 변경됨)
+    setShowMenu(!showMenu);
   };
+  // console.log(showMenu);
 
   return (
     <>
-      {!menuToggle && (
+      {/* showMenu가 true일 때 드롭다운 메뉴 보여주기 */}
+      {showMenu && (
         <div className="bg-bgColor border-[1px] border-deepGray">
           <div className="flex h-[70px] bg-[white] pl-[10px] items-center">
             <img className="w-[30px] h-[30px] rounded-[50%] border-[1px] border-lightGray bg-lightGreen" />
-            <div className="ml-[3px] cursor-pointer " onClick={moveToMyPage}>
+            <div className="ml-[3px] cursor-pointer" onClick={moveToMyPage}>
               고토리
             </div>
           </div>

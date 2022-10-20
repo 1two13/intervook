@@ -20,6 +20,7 @@ function TopFixedBar() {
   const showMenu = () => {
     setMenuToggle(!menuToggle);
   };
+  // console.log(menuToggle);
 
   return (
     <>
