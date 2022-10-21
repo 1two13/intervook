@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faBookmark } from "@fortawesome/free-regular-svg-icons";
+import { faFolder } from "@fortawesome/free-regular-svg-icons";
 
 function DropDownMenu() {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ function DropDownMenu() {
             </div>
           </div>
 
-          <div className="h-[150px] pl-[10px] pt-[10px]">
+          <div className="flex flex-col h-[150px] pl-[10px] pt-[10px]">
             <div className="pb-[6px]">
               <FontAwesomeIcon
                 size="lg"
@@ -38,7 +39,7 @@ function DropDownMenu() {
               />
               좋아요
             </div>
-            <div>
+            <div className="pb-[6px]">
               <FontAwesomeIcon
                 size="lg"
                 color="lightGreen"
@@ -46,6 +47,15 @@ function DropDownMenu() {
                 icon={faBookmark}
               />
               북마크
+            </div>
+            <div>
+              <FontAwesomeIcon
+                size="lg"
+                color="lightGreen"
+                className="mr-[7px] cursor-pointer"
+                icon={faFolder}
+              />
+              저장한 게시물
             </div>
           </div>
 
