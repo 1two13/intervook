@@ -1,12 +1,12 @@
-import "./App.css"; // tailwind 사용 위해 import
-import { Routes, Route } from "react-router-dom";
+import './App.css'; // tailwind 사용 위해 import
+import { Routes, Route } from 'react-router-dom';
 
-import TopFixedBar from "./common/components/TopFixedBar";
-import MainPage from "./pages/MainPage";
-import LoginPage from "./pages/LoginPage";
-import JoinPage from "./pages/JoinPage";
-import MyPage from "./pages/MyPage";
-import WritingPage from "./pages/WritingPage";
+import TopFixedBar from './common/components/TopFixedBar';
+import MainPage from './pages/MainPage';
+import LoginPage from './pages/LoginPage';
+import JoinPage from './pages/JoinPage';
+import MyPage from './pages/MyPage';
+import WritingPage from './pages/WritingPage';
 
 function App() {
   return (

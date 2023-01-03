@@ -1,26 +1,25 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faBookmark } from "@fortawesome/free-regular-svg-icons";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faBookmark } from '@fortawesome/free-regular-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-import Icons from "../../assets/Icons";
-import IsHover from "./IsHover";
+import Icons from '../../assets/Icons';
+import IsHover from './IsHover';
 
 function Logged({ propFunction }: any) {
   const navigate = useNavigate();
   const [isHover, setIsHover] = useState(false);
 
   const moveToMyPage = () => {
-    navigate("/mypage");
+    navigate('/mypage');
   };
 
   const showMenu = (text: any) => {
     propFunction(text);
-    // console.log(text);
   };
 
   return (

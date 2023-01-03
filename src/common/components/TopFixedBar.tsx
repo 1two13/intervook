@@ -1,14 +1,14 @@
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-import { RootState } from "../../reducers";
-import UnLogged from "./UnLogged";
-import Logged from "./Logged";
-import Hamburger from "./Hamburger";
+import { RootState } from '../../reducers';
+import UnLogged from './UnLogged';
+import Logged from './Logged';
+import Hamburger from './Hamburger';
 
 function TopFixedBar() {
   const navigate = useNavigate();
@@ -17,13 +17,12 @@ function TopFixedBar() {
   // console.log(isLogin);
 
   const moveToMainPage = () => {
-    navigate("/");
+    navigate('/');
   };
 
   const showMenu = () => {
     setMenuToggle(!menuToggle);
   };
-  // console.log(menuToggle);
 
   return (
     <>
@@ -34,11 +33,7 @@ function TopFixedBar() {
           </div>
 
           <div className="flex items-center">
-            <FontAwesomeIcon
-              icon={faMagnifyingGlass}
-              size="2x"
-              color="lightGreen"
-            />
+            <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" color="lightGreen" />
 
             {isLogin ? <Logged propFunction={showMenu} /> : <UnLogged />}
           </div>
