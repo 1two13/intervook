@@ -11,12 +11,13 @@ function Name() {
 
   const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
+
     if (e.target.value.length < 2 || e.target.value.length > 7) {
-      setNameMsg('2글자 이상 7글자 미만으로 입력해주세요.');
       setIsName(false);
+      setNameMsg('2글자 이상 7글자 미만으로 입력해주세요.');
     } else {
-      setNameMsg('올바른 이름 형식입니다.');
       setIsName(true);
+      setNameMsg('올바른 이름 형식입니다.');
     }
   };
 
