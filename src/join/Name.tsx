@@ -1,15 +1,12 @@
 import { useState } from 'react';
 
-import Input from '../common/components/Input';
 import Label from './Label';
+import Input from '../common/components/Input';
 import Message from './Message';
 
 function Name() {
-  // 이름 확인
   const [name, setName] = useState<string>('');
-  // 메세지 상태 저장
   const [nameMsg, setNameMsg] = useState<string>('');
-  // 유효성
   const [isName, setIsName] = useState<boolean>(false);
 
   const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
