@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Input from '../common/components/Input';
 import Label from './Label';
-import Comments from './Comments';
+import Message from './Message';
 
 function Email() {
   const [email, setEmail] = useState<string>('');
@@ -33,7 +33,7 @@ function Email() {
         type="text"
         onChange={onChangeEmail}
       />
-      {email.length > 0 ? <Comments message={message} /> : ''}
+      {email.length > 0 ? <Message message={message} /> : ''}
     </>
   );
 }

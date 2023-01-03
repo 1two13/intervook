@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Input from '../common/components/Input';
 import Label from './Label';
-import Comments from './Comments';
+import Message from './Message';
 
 function Password() {
   // 비밀번호 확인
@@ -33,7 +33,7 @@ function Password() {
         type="password"
         onChange={onChangePassword}
       />
-      {password.length > 0 ? <Comments message={passwordMsg} /> : ''}
+      {password.length > 0 ? <Message message={passwordMsg} /> : ''}
     </>
   );
 }

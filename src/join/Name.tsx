@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import Input from '../common/components/Input';
 import Label from './Label';
-import Comments from './Comments';
+import Message from './Message';
 
 function Name() {
   // 이름 확인
@@ -27,7 +27,7 @@ function Name() {
     <>
       <Label name={'이름'} />
       <Input placeholder="프로필 이름" name="name" type="text" onChange={onChangeName} />
-      {name.length > 0 ? <Comments message={nameMsg} /> : ''}
+      {name.length > 0 ? <Message message={nameMsg} /> : ''}
     </>
   );
 }
