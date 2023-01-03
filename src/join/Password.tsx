@@ -5,11 +5,8 @@ import Label from './Label';
 import Message from './Message';
 
 function Password() {
-  // 비밀번호 확인
   const [password, setPassword] = useState<string>('');
-  // 메세지 상태 저장
   const [passwordMsg, setPasswordMsg] = useState<string>('');
-  // 유효성
   const [isPassword, setIsPassword] = useState<boolean>(false);
 
   const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
