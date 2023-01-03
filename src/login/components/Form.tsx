@@ -1,16 +1,14 @@
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
-import * as actions from "../../actions/authActions";
-import loginApi from "../../api/loginApi";
-import { RootState } from "../../reducers";
-
-import Input from "../../common/components/Input";
+import loginApi from '../../api/loginApi';
+import { authSlice } from '../../redux-toolkit/slices';
+import Input from '../../common/components/Input';
 
 function Form() {
-  const [id, setId] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
+  const [id, setId] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   // 유효성
   const [isEmail, setIsEmail] = useState<boolean>(false);
   const [isPassword, setIsPassword] = useState<boolean>(false);
@@ -19,19 +17,19 @@ function Form() {
   // action 함수 가져오기, state 값 변경시킬 때
   const dispatch = useDispatch();
   // 상태 조회하기
-  const state = useSelector((state: RootState) => state);
+  const state = useSelector((state: any) => state);
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     loginApi(id, password).then((result) => {
       if (result.is_login) {
         // 성공했다고 가정
-        dispatch(actions.login(1, "tori"));
-        navigate("/");
+        dispatch(authSlice.actions.login('tori'));
+        navigate('/');
         // console.log(state);
       } else {
         // 실패
-        navigate("/join");
+        navigate('/join');
       }
     });
   };
@@ -59,8 +57,8 @@ function Form() {
       <button
         className={
           isEmail && isPassword
-            ? "w-[260px] h-[45px] pl-[10px] mb-[26px] text-[16px] border-[0.7px] rounded-[7px] bg-lightGreen text-[white]"
-            : "w-[260px] h-[45px] pl-[10px] mb-[26px] text-[16px] border-[0.7px] rounded-[7px] bg-deepGray text-[white]"
+            ? 'w-[260px] h-[45px] pl-[10px] mb-[26px] text-[16px] border-[0.7px] rounded-[7px] bg-lightGreen text-[white]'
+            : 'w-[260px] h-[45px] pl-[10px] mb-[26px] text-[16px] border-[0.7px] rounded-[7px] bg-deepGray text-[white]'
         }
         disabled={!(isEmail && isPassword)}
       >
