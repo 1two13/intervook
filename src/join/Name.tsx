@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { joinSlice } from '../redux-toolkit/slices';
 
 import Label from './Label';
 import Input from '../common/components/Input';
 import Message from './Message';
 
-function Name({ setIsName }: any) {
+function Name() {
+  const dispatch = useDispatch();
   const [name, setName] = useState<string>('');
   const [message, setMessage] = useState<string>('');
 
@@ -12,10 +15,10 @@ function Name({ setIsName }: any) {
     setName(e.target.value);
 
     if (e.target.value.length < 2 || e.target.value.length > 7) {
-      setIsName(false);
+      dispatch(joinSlice.actions.isName(false));
       setMessage('2글자 이상 7글자 미만으로 입력해주세요.');
     } else {
-      setIsName(true);
+      dispatch(joinSlice.actions.isName(true));
       setMessage('올바른 이름 형식입니다.');
     }
   };
