@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-import { RootState } from '../../reducers';
 import UnLogged from './UnLogged';
 import Logged from './Logged';
 import Hamburger from './Hamburger';
@@ -13,8 +12,7 @@ import Hamburger from './Hamburger';
 function TopFixedBar() {
   const navigate = useNavigate();
   const [menuToggle, setMenuToggle] = useState(false);
-  const isLogin = useSelector((state: RootState) => state.auth.isLogin);
-  // console.log(isLogin);
+  const isLogin = useSelector((state: any) => state.auth.isLogin);
 
   const moveToMainPage = () => {
     navigate('/');
@@ -29,7 +27,7 @@ function TopFixedBar() {
       <div className="sticky top-0 h-[75px] bg-[white]">
         <div className="flex w-[80%] h-[75px] m-auto items-center justify-between">
           <div onClick={moveToMainPage} className="cursor-pointer text-[36px]">
-            고토리북
+            인터뷰북
           </div>
 
           <div className="flex items-center">
