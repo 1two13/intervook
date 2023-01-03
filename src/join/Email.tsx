@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Input from '../../common/components/Input';
+import Input from '../common/components/Input';
 import Label from './Label';
 import Comments from './Comments';
 
