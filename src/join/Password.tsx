@@ -4,10 +4,9 @@ import Input from '../common/components/Input';
 import Label from './Label';
 import Message from './Message';
 
-function Password() {
+function Password({ setIsPassword }: any) {
   const [password, setPassword] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  const [isPassword, setIsPassword] = useState<boolean>(false);
 
   const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,20}$/;

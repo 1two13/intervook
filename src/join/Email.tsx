@@ -4,10 +4,9 @@ import Input from '../common/components/Input';
 import Label from './Label';
 import Message from './Message';
 
-function Email() {
+function Email({ setIsEmail }: any) {
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  const [isEmail, setIsEmail] = useState<boolean>(false);
 
   const onChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     const emailRegex =

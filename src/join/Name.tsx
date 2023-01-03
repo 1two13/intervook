@@ -4,10 +4,9 @@ import Label from './Label';
 import Input from '../common/components/Input';
 import Message from './Message';
 
-function Name() {
+function Name({ setIsName }: any) {
   const [name, setName] = useState<string>('');
   const [message, setMessage] = useState<string>('');
-  const [isName, setIsName] = useState<boolean>(false);
 
   const onChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
