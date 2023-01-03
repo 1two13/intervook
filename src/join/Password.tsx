@@ -6,17 +6,17 @@ import Message from './Message';
 
 function Password() {
   const [password, setPassword] = useState<string>('');
-  const [passwordMsg, setPasswordMsg] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
   const [isPassword, setIsPassword] = useState<boolean>(false);
 
   const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[0-9]).{6,20}$/;
     setPassword(e.target.value);
     if (!passwordRegex.test(e.target.value)) {
-      setPasswordMsg('영문, 숫자 포함 6자리 이상 입력해주세요.');
+      setMessage('영문, 숫자 포함 6자리 이상 입력해주세요.');
       setIsPassword(false);
     } else {
-      setPasswordMsg('안전한 비밀번호 입니다.🙂');
+      setMessage('안전한 비밀번호 입니다.🙂');
       setIsPassword(true);
     }
   };
@@ -30,7 +30,7 @@ function Password() {
         type="password"
         onChange={onChangePassword}
       />
-      {password.length > 0 ? <Message message={passwordMsg} /> : ''}
+      {password.length > 0 ? <Message message={message} /> : ''}
     </>
   );
 }
