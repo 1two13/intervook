@@ -1,19 +1,23 @@
-import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
-function Button() {
-  // 유효성
-  const [isName, setIsName] = useState<boolean>(false);
-  const [isEmail, setIsEmail] = useState<boolean>(false);
-  const [isPassword, setIsPassword] = useState<boolean>(false);
+function Button({ isCorrect }: { isCorrect: Array<boolean> }) {
+  const truthy = isCorrect.every((el) => el === true);
+
+  const navigate = useNavigate();
+  const onSubmitHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (truthy) navigate('/');
+  };
 
   return (
     <button
       className={
-        isName && isEmail && isPassword
-          ? "w-[260px] h-[50px] pl-[10px] mt-[16px] text-[16px] border-[0.7px] rounded-[7px] bg-lightGreen text-[white]"
-          : "w-[260px] h-[50px] pl-[10px] mt-[16px] text-[16px] border-[0.7px] rounded-[7px] bg-deepGray text-[white]"
+        truthy
+          ? 'w-[260px] h-[50px] pl-[10px] mt-[16px] text-[16px] border-[0.7px] rounded-[7px] bg-lightGreen text-[white]'
+          : 'w-[260px] h-[50px] pl-[10px] mt-[16px] text-[16px] border-[0.7px] rounded-[7px] bg-deepGray text-[white]'
       }
-      disabled={!(isName && isEmail && isPassword)}
+      disabled={!truthy}
+      onClick={onSubmitHandler}
     >
       회원가입
     </button>
