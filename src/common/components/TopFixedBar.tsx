@@ -29,7 +29,7 @@ function TopFixedBar() {
       <div className="sticky top-0 h-[75px] bg-[white]">
         <div className="flex w-[80%] h-[75px] m-auto items-center justify-between">
           <div onClick={moveToMainPage} className="cursor-pointer text-[36px]">
-            고토리북
+            인터뷰북
           </div>
 
           <div className="flex items-center">
