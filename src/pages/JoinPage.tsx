@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 import LoginNJoinBox from '../common/components/LoginNJoinBox';
 import H1 from '../common/components/H1';
-import Name from '../join/components/Name';
-import Email from '../join/components/Email';
-import Password from '../join/components/Password';
-import Button from '../join/components/Button';
+import Name from '../join/Name';
+import Email from '../join/Email';
+import Password from '../join/Password';
+import Button from '../join/Button';
 
 function JoinPage() {
   const navigate = useNavigate();
