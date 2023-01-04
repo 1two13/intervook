@@ -7,6 +7,7 @@ import { faFolder } from '@fortawesome/free-regular-svg-icons';
 import Buttons from '../writing/Buttons';
 import Link from '../writing/Link';
 import Image from '../writing/Image';
+import Title from '../writing/Title';
 
 function WritingPage() {
   const [imageUrl, setImageUrl] = useState('');
@@ -50,10 +51,7 @@ function WritingPage() {
       </div>
 
       <div className="w-[80%] m-auto">
-        <input
-          placeholder="제목을 입력해주세요."
-          className="w-[100%] h-[55px] justify-center pl-[10px] outline-0 text-[28px] bg-[white] border-b-[1px] border-lightGray"
-        />
+        <Title />
 
         {isLink && (
           <input
