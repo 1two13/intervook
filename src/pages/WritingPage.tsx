@@ -1,26 +1,24 @@
-import { useRef, useState } from "react";
+import { useRef, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { faImage } from "@fortawesome/free-solid-svg-icons";
-import { faFolder } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFolder } from '@fortawesome/free-regular-svg-icons';
 
-import Icon from "../writing/components/Icon";
-import Buttons from "../writing/components/Buttons";
+import Buttons from '../writing/Buttons';
+import Link from '../writing/Link';
+import Image from '../writing/Image';
 
 function WritingPage() {
-  const [linkClicked, setLinkClicked] = useState(false);
-  const [imgClicked, setImgClicked] = useState(false);
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState('');
   const [fileSelector, setFileSelector] = useState(true);
   const imgRef = useRef<HTMLInputElement>(null);
 
-  const showLink = () => {
-    setLinkClicked(!linkClicked);
-  };
-  const showImage = () => {
-    setImgClicked(!imgClicked);
-  };
+  const isLink = useSelector((state: any) => {
+    return state.writing.isLink;
+  });
+  const isImage = useSelector((state: any) => {
+    return state.writing.isImage;
+  });
 
   const onChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     // 선택한 파일 정보
@@ -39,7 +37,7 @@ function WritingPage() {
   };
 
   const deleteImg = () => {
-    setImageUrl("");
+    setImageUrl('');
   };
 
   return (
@@ -47,8 +45,8 @@ function WritingPage() {
       <Buttons />
 
       <div className="pt-[5%] pl-[7%] pb-[3%]">
-        <Icon icon={faLink} onClick={showLink} />
-        <Icon icon={faImage} onClick={showImage} />
+        <Link />
+        <Image />
       </div>
 
       <div className="w-[80%] m-auto">
@@ -56,17 +54,15 @@ function WritingPage() {
           placeholder="제목을 입력해주세요."
           className="w-[100%] h-[55px] justify-center pl-[10px] outline-0 text-[28px] bg-[white] border-b-[1px] border-lightGray"
         />
-
         {/* 링크 아이콘 클릭했을 때 보여지는 UI */}
-        {linkClicked && (
+        {isLink && (
           <input
             placeholder="https://"
             className="w-[100%] h-[60px] mt-[20px] pl-[10px] outline-0 rounded-[5px] border-[1px] border-lightGray"
           />
         )}
-
         {/* 이미지 아이콘 클릭했을 때 보여지는 UI */}
-        {imgClicked && (
+        {isImage && (
           <div className="flex justify-center items-center w-[100%] h-[140px] mt-[20px] outline-0 rounded-[5px] border-[1px] border-lightGray border-dashed">
             <button
               onClick={() => {
@@ -88,9 +84,8 @@ function WritingPage() {
             />
           </div>
         )}
-
         {/* 파일 선택 버튼을 클릭했을 때 보여지는 UI */}
-        {imgClicked && fileSelector && imageUrl !== "" && (
+        {isImage && fileSelector && imageUrl !== '' && (
           <div className="relative mt-[20px]">
             <div
               onClick={deleteImg}
@@ -107,7 +102,6 @@ function WritingPage() {
             />
           </div>
         )}
-
         <textarea
           placeholder="생각을 공유해주세요."
           className="w-[100%] h-[100vh] !important pl-[10px] pt-[10px] outline-0 text-[18px] resize-none"
