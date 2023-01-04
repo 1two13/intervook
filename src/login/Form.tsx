@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import loginApi from '../../api/loginApi';
-import { authSlice } from '../../redux-toolkit/slices';
-import Input from '../../common/components/Input';
+import loginApi from '../api/loginApi';
+import { authSlice } from '../redux-toolkit/slices';
+import Input from '../common/components/Input';
 
 function Form() {
   const [id, setId] = useState<string>('');
