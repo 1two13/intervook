@@ -7,13 +7,13 @@ import { authSlice } from '../redux-toolkit/slices';
 import Input from '../common/components/Input';
 
 function Form() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isEmail, setIsEmail] = useState<boolean>(false);
   const [isPassword, setIsPassword] = useState<boolean>(false);
-
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,6 +45,7 @@ function Form() {
           setIsPassword(true);
         }}
       />
+
       <button
         className={
           isEmail && isPassword
