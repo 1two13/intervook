@@ -10,12 +10,7 @@ interface IIcons {
 function Icons({ icon, onClick, onMouseOver, onMouseOut }: IIcons) {
   return (
     <div onClick={onClick} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
-      <FontAwesomeIcon
-        size="2x"
-        color="deepGreen"
-        className="ml-[20px] cursor-pointer"
-        icon={icon}
-      />
+      <FontAwesomeIcon size="2x" className="ml-[20px] cursor-pointer text-deepGreen" icon={icon} />
     </div>
   );
 }

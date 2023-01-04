@@ -49,8 +49,7 @@ function Logged({ propFunction }: any) {
       <div className="min:hidden">
         <FontAwesomeIcon
           size="2x"
-          color="deepGreen"
-          className="mr-[-10%] ml-[20px] cursor-pointer"
+          className="mr-[-10%] ml-[20px] cursor-pointer text-deepGreen"
           icon={faBars}
           onClick={showMenu}
         />
