@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import loginApi from '../api/loginApi';
@@ -14,7 +14,6 @@ function Form() {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const state = useSelector((state: any) => state);
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
