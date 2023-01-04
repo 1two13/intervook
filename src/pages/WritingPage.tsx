@@ -54,14 +54,14 @@ function WritingPage() {
           placeholder="제목을 입력해주세요."
           className="w-[100%] h-[55px] justify-center pl-[10px] outline-0 text-[28px] bg-[white] border-b-[1px] border-lightGray"
         />
-        {/* 링크 아이콘 클릭했을 때 보여지는 UI */}
+
         {isLink && (
           <input
             placeholder="https://"
             className="w-[100%] h-[60px] mt-[20px] pl-[10px] outline-0 rounded-[5px] border-[1px] border-lightGray"
           />
         )}
-        {/* 이미지 아이콘 클릭했을 때 보여지는 UI */}
+
         {isImage && (
           <div className="flex justify-center items-center w-[100%] h-[140px] mt-[20px] outline-0 rounded-[5px] border-[1px] border-lightGray border-dashed">
             <button
@@ -84,7 +84,7 @@ function WritingPage() {
             />
           </div>
         )}
-        {/* 파일 선택 버튼을 클릭했을 때 보여지는 UI */}
+
         {isImage && fileSelector && imageUrl !== '' && (
           <div className="relative mt-[20px]">
             <div
