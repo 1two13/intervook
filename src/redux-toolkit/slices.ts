@@ -34,13 +34,19 @@ export const joinSlice = createSlice({
 
 export const writingSlice = createSlice({
   name: 'writing',
-  initialState: { isLink: false, isImage: false },
+  initialState: { isLink: false, isImage: false, isSelected: false, imageUrl: '' },
   reducers: {
     link: (state, action) => {
       state.isLink = !state.isLink;
     },
     image: (state, action) => {
       state.isImage = !state.isImage;
+    },
+    selected: (state, action) => {
+      state.isSelected = action.payload;
+    },
+    imageUrl: (state, action) => {
+      state.imageUrl = action.payload;
     },
   },
 });
