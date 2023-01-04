@@ -1,12 +1,14 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolder } from '@fortawesome/free-regular-svg-icons';
 
+import { writingSlice } from '../redux-toolkit/slices';
+
 function ShowImage() {
   const imgRef = useRef<HTMLInputElement>(null);
-  const [fileSelector, setFileSelector] = useState(true);
-  const [imageUrl, setImageUrl] = useState('');
+  const dispatch = useDispatch();
 
   const onChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     // 선택한 파일 정보
@@ -20,7 +22,8 @@ function ShowImage() {
 
     reader.readAsDataURL(files);
     reader.onload = () => {
-      setImageUrl(reader.result as string);
+      // setImageUrl(reader.result as string);
+      dispatch(writingSlice.actions.imageUrl(reader.result as string));
     };
   };
 
@@ -29,7 +32,7 @@ function ShowImage() {
       <button
         onClick={() => {
           imgRef.current?.click();
-          setFileSelector(fileSelector);
+          dispatch(writingSlice.actions.selected(true));
         }}
         className="flex justify-center items-center h-[45px] p-[10px] cursor-pointer bg-bgColor border-[1px] border-deepGray border-dashed rounded-[5px]"
       >

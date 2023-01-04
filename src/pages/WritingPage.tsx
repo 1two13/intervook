@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { writingSlice } from '../redux-toolkit/slices';
@@ -13,8 +13,6 @@ import Icon from '../writing/Icon';
 import ShowImage from '../writing/ShowImage';
 
 function WritingPage() {
-  const [imageUrl, setImageUrl] = useState('');
-  const [fileSelector, setFileSelector] = useState(true);
   const imgRef = useRef<HTMLInputElement>(null);
 
   const dispatch = useDispatch();
@@ -30,9 +28,14 @@ function WritingPage() {
   const isImage = useSelector((state: any) => {
     return state.writing.isImage;
   });
-
+  const isSelected = useSelector((state: any) => {
+    return state.writing.isSelected;
+  });
+  const imageUrl = useSelector((state: any) => {
+    return state.writing.imageUrl;
+  });
   const deleteImg = () => {
-    setImageUrl('');
+    dispatch(writingSlice.actions.imageUrl(''));
   };
 
   return (
@@ -49,7 +52,7 @@ function WritingPage() {
         {isLink && <ShowLink />}
         {isImage && <ShowImage />}
 
-        {isImage && fileSelector && imageUrl !== '' && (
+        {isImage && isSelected && imageUrl !== '' && (
           <div className="relative mt-[20px]">
             <div
               onClick={deleteImg}
