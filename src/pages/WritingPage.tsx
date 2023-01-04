@@ -8,6 +8,7 @@ import Buttons from '../writing/Buttons';
 import Link from '../writing/Link';
 import Image from '../writing/Image';
 import Title from '../writing/Title';
+import ShowLink from '../writing/ShowLink';
 
 function WritingPage() {
   const [imageUrl, setImageUrl] = useState('');
@@ -53,12 +54,7 @@ function WritingPage() {
       <div className="w-[80%] m-auto">
         <Title />
 
-        {isLink && (
-          <input
-            placeholder="https://"
-            className="w-[100%] h-[60px] mt-[20px] pl-[10px] outline-0 rounded-[5px] border-[1px] border-lightGray"
-          />
-        )}
+        {isLink && <ShowLink />}
 
         {isImage && (
           <div className="flex justify-center items-center w-[100%] h-[140px] mt-[20px] outline-0 rounded-[5px] border-[1px] border-lightGray border-dashed">
