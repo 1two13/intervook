@@ -3,15 +3,14 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { writingSlice } from '../redux-toolkit/slices';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
-import { faFolder } from '@fortawesome/free-regular-svg-icons';
 
 import Buttons from '../writing/Buttons';
 import Title from '../writing/Title';
 import ShowLink from '../writing/ShowLink';
 import Icon from '../writing/Icon';
+import ShowImage from '../writing/ShowImage';
 
 function WritingPage() {
   const [imageUrl, setImageUrl] = useState('');
@@ -32,22 +31,6 @@ function WritingPage() {
     return state.writing.isImage;
   });
 
-  const onChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // 선택한 파일 정보
-    // const files = (e.currentTarget.files as FileList)[0];
-    const files = (e.target.files as FileList)[0];
-    const reader = new FileReader();
-    // console.log(files, reader);
-    console.log(files);
-
-    if (files === undefined) return;
-
-    reader.readAsDataURL(files);
-    reader.onload = () => {
-      setImageUrl(reader.result as string);
-    };
-  };
-
   const deleteImg = () => {
     setImageUrl('');
   };
@@ -64,29 +47,7 @@ function WritingPage() {
       <div className="w-[80%] m-auto">
         <Title />
         {isLink && <ShowLink />}
-
-        {isImage && (
-          <div className="flex justify-center items-center w-[100%] h-[140px] mt-[20px] outline-0 rounded-[5px] border-[1px] border-lightGray border-dashed">
-            <button
-              onClick={() => {
-                imgRef.current?.click();
-                setFileSelector(fileSelector);
-              }}
-              className="flex justify-center items-center h-[45px] p-[10px] cursor-pointer bg-bgColor border-[1px] border-deepGray border-dashed rounded-[5px]"
-            >
-              <FontAwesomeIcon icon={faFolder} size="lg" className="mr-[5px]" />
-              파일 선택
-            </button>
-            <input
-              type="file"
-              multiple
-              ref={imgRef}
-              onChange={onChangeImage}
-              accept="image/png, image/jpg, image/jpeg"
-              className="hidden"
-            />
-          </div>
-        )}
+        {isImage && <ShowImage />}
 
         {isImage && fileSelector && imageUrl !== '' && (
           <div className="relative mt-[20px]">
