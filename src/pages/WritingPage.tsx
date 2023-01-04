@@ -1,20 +1,30 @@
 import { useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { writingSlice } from '../redux-toolkit/slices';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { faFolder } from '@fortawesome/free-regular-svg-icons';
 
 import Buttons from '../writing/Buttons';
-import Link from '../writing/Link';
-import Image from '../writing/Image';
 import Title from '../writing/Title';
 import ShowLink from '../writing/ShowLink';
+import Icon from '../writing/Icon';
 
 function WritingPage() {
   const [imageUrl, setImageUrl] = useState('');
   const [fileSelector, setFileSelector] = useState(true);
   const imgRef = useRef<HTMLInputElement>(null);
 
+  const dispatch = useDispatch();
+  const showLink = () => {
+    dispatch(writingSlice.actions.link(true));
+  };
+  const showImage = () => {
+    dispatch(writingSlice.actions.image(true));
+  };
   const isLink = useSelector((state: any) => {
     return state.writing.isLink;
   });
@@ -47,13 +57,12 @@ function WritingPage() {
       <Buttons />
 
       <div className="pt-[5%] pl-[7%] pb-[3%]">
-        <Link />
-        <Image />
+        <Icon icon={faLink} onClick={showLink} />
+        <Icon icon={faImage} onClick={showImage} />
       </div>
 
       <div className="w-[80%] m-auto">
         <Title />
-
         {isLink && <ShowLink />}
 
         {isImage && (
