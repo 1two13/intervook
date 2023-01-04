@@ -7,7 +7,7 @@ import { authSlice } from '../redux-toolkit/slices';
 import Input from '../common/components/Input';
 
 function Form() {
-  const [id, setId] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   // 유효성
   const [isEmail, setIsEmail] = useState<boolean>(false);
@@ -21,7 +21,7 @@ function Form() {
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    loginApi(id, password).then((result) => {
+    loginApi(email, password).then((result) => {
       if (result.is_login) {
         // 성공했다고 가정
         dispatch(authSlice.actions.login('tori'));
@@ -38,10 +38,10 @@ function Form() {
     <form onSubmit={onSubmitHandler} className="flex flex-col">
       <Input
         placeholder="이메일"
-        name="id"
+        name="email"
         type="text"
         onChange={(e) => {
-          setId(e.target.value);
+          setEmail(e.target.value);
           setIsEmail(true);
         }}
       />
