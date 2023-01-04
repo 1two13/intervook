@@ -9,28 +9,20 @@ import Input from '../common/components/Input';
 function Form() {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  // 유효성
   const [isEmail, setIsEmail] = useState<boolean>(false);
   const [isPassword, setIsPassword] = useState<boolean>(false);
 
   const navigate = useNavigate();
-  // action 함수 가져오기, state 값 변경시킬 때
   const dispatch = useDispatch();
-  // 상태 조회하기
   const state = useSelector((state: any) => state);
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     loginApi(email, password).then((result) => {
       if (result.is_login) {
-        // 성공했다고 가정
         dispatch(authSlice.actions.login('tori'));
         navigate('/');
-        // console.log(state);
-      } else {
-        // 실패
-        navigate('/join');
-      }
+      } else navigate('/join');
     });
   };
 
