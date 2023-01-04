@@ -4,7 +4,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 function LoadingPage() {
   return (
     <div className="flex h-screen justify-center items-center bg-[white]/5">
-      <FontAwesomeIcon icon={faSpinner} pulse size="4x" color="lightGreen" />
+      <FontAwesomeIcon icon={faSpinner} pulse size="4x" color="deepGreen" />
     </div>
   );
 }

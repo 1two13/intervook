@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface IIcons {
   icon: any;
@@ -12,7 +12,7 @@ function Icons({ icon, onClick, onMouseOver, onMouseOut }: IIcons) {
     <div onClick={onClick} onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
       <FontAwesomeIcon
         size="2x"
-        color="lightGreen"
+        color="deepGreen"
         className="ml-[20px] cursor-pointer"
         icon={icon}
       />

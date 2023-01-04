@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
-import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 function Card() {
   return (
@@ -21,13 +21,13 @@ function Card() {
       <div className="flex mr-[10px]">
         <div className="mr-[10px] text-center">
           <button>
-            <FontAwesomeIcon icon={faThumbsUp} size="2x" color="lightGreen" />
+            <FontAwesomeIcon icon={faThumbsUp} size="2x" className="text-deepGreen" />
           </button>
           <div className="text-[8px]">좋아요 7</div>
         </div>
 
         <button className="flex pt-[2px]">
-          <FontAwesomeIcon icon={faBookmark} size="2x" color="lightGreen" />
+          <FontAwesomeIcon icon={faBookmark} size="2x" className="text-deepGreen" />
         </button>
       </div>
     </div>

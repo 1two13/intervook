@@ -1,12 +1,12 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function SearchNBtn() {
   const navigate = useNavigate();
   const moveToWritingPage = () => {
-    navigate("/writing");
+    navigate('/writing');
   };
 
   return (
@@ -16,7 +16,7 @@ function SearchNBtn() {
         className="w-[75%] h-[100%] pl-[25px] border-[2px] rounded-[10px] border-lightGray cursor-pointer outline-0"
         onClick={moveToWritingPage}
       ></input>
-      <button className="w-[20%] h-[100%] ml-[5%] border-[2px] rounded-[80px] border-lightGreen bg-lightGreen/20">
+      <button className="w-[20%] h-[100%] ml-[5%] rounded-[80px] bg-deepGreen text-[white] text-[20px]">
         퀴즈
         <FontAwesomeIcon icon={faArrowRight} className="pl-[5px]" />
       </button>

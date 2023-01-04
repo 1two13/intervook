@@ -4,9 +4,7 @@ function Buttons() {
       <button className="w-[6vw] h-[40px] mx-[5%] border-[1px] rounded-[10px] border-deepGray">
         보관
       </button>
-      <button className="w-[6vw] h-[40px] rounded-[10px] bg-lightGreen text-[white]">
-        완료
-      </button>
+      <button className="w-[6vw] h-[40px] rounded-[10px] bg-deepGreen text-[white]">완료</button>
     </div>
   );
 }

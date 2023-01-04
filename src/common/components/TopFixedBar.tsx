@@ -31,7 +31,7 @@ function TopFixedBar() {
           </div>
 
           <div className="flex items-center">
-            <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" color="lightGreen" />
+            <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" className="text-deepGreen" />
 
             {isLogin ? <Logged propFunction={showMenu} /> : <UnLogged />}
           </div>

@@ -1,17 +1,17 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faBookmark } from "@fortawesome/free-regular-svg-icons";
-import { faFolder } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faBookmark } from '@fortawesome/free-regular-svg-icons';
+import { faFolder } from '@fortawesome/free-regular-svg-icons';
 
 function DropDownMenu() {
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(true);
 
   const moveToMyPage = () => {
-    navigate("/myPage");
+    navigate('/myPage');
     // 드롭다운 메뉴 숨기기 (showMenu가 false로 변경됨)
     setShowMenu(!showMenu);
   };
@@ -23,7 +23,7 @@ function DropDownMenu() {
       {showMenu && (
         <div className="bg-bgColor border-[1px] border-deepGray">
           <div className="flex h-[70px] bg-[white] pl-[10px] items-center">
-            <img className="w-[30px] h-[30px] rounded-[50%] border-[1px] border-lightGray bg-lightGreen" />
+            <img className="w-[30px] h-[30px] rounded-[50%] border-[1px] border-lightGray bg-deepGreen" />
             <div className="ml-[3px] cursor-pointer" onClick={moveToMyPage}>
               고토리
             </div>
@@ -33,7 +33,7 @@ function DropDownMenu() {
             <div className="pb-[6px]">
               <FontAwesomeIcon
                 size="lg"
-                color="lightGreen"
+                color="deepGreen"
                 className="mr-[7px] cursor-pointer"
                 icon={faHeart}
               />
@@ -42,7 +42,7 @@ function DropDownMenu() {
             <div className="pb-[6px]">
               <FontAwesomeIcon
                 size="lg"
-                color="lightGreen"
+                color="deepGreen"
                 className="ml-[2px] mr-[10px] cursor-pointer"
                 icon={faBookmark}
               />
@@ -51,7 +51,7 @@ function DropDownMenu() {
             <div>
               <FontAwesomeIcon
                 size="lg"
-                color="lightGreen"
+                color="deepGreen"
                 className="mr-[7px] cursor-pointer"
                 icon={faFolder}
               />

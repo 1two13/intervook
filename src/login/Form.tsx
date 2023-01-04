@@ -49,7 +49,7 @@ function Form() {
       <button
         className={
           isEmail && isPassword
-            ? 'w-[260px] h-[45px] pl-[10px] mb-[26px] text-[16px] border-[0.7px] rounded-[7px] bg-lightGreen text-[white]'
+            ? 'w-[260px] h-[45px] pl-[10px] mb-[26px] text-[16px] border-[0.7px] rounded-[7px] bg-deepGreen text-[white]'
             : 'w-[260px] h-[45px] pl-[10px] mb-[26px] text-[16px] border-[0.7px] rounded-[7px] bg-deepGray text-[white]'
         }
         disabled={!(isEmail && isPassword)}
