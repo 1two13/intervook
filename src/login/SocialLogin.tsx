@@ -1,7 +1,7 @@
 import Hr from './Hr';
 import Button from './Button';
 
-function EasyLogin() {
+function SocialLogin() {
   return (
     <>
       <div className="w-[100%] flex items-center justify-center">
@@ -19,4 +19,4 @@ function EasyLogin() {
   );
 }
 
-export default EasyLogin;
+export default SocialLogin;

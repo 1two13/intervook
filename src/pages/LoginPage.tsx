@@ -1,7 +1,7 @@
 import H1 from '../common/components/H1';
 import LoginNJoinBox from '../common/components/LoginNJoinBox';
 import Form from '../login/Form';
-import EasyLogin from '../login/EasyLogin';
+import SocialLogin from '../login/SocialLogin';
 
 function LoginPage() {
   return (
@@ -9,7 +9,7 @@ function LoginPage() {
       <LoginNJoinBox>
         <H1 name={'인터뷰북'} />
         <Form />
-        <EasyLogin />
+        <SocialLogin />
       </LoginNJoinBox>
     </div>
   );
