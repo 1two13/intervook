@@ -11,18 +11,14 @@ function ShowImage() {
   const dispatch = useDispatch();
 
   const onChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // 선택한 파일 정보
-    // const files = (e.currentTarget.files as FileList)[0];
     const files = (e.target.files as FileList)[0];
     const reader = new FileReader();
-    // console.log(files, reader);
     console.log(files);
 
     if (files === undefined) return;
 
     reader.readAsDataURL(files);
     reader.onload = () => {
-      // setImageUrl(reader.result as string);
       dispatch(writingSlice.actions.imageUrl(reader.result as string));
     };
   };
@@ -39,6 +35,7 @@ function ShowImage() {
         <FontAwesomeIcon icon={faFolder} size="lg" className="mr-[5px]" />
         파일 선택
       </button>
+
       <input
         type="file"
         multiple
