@@ -1,9 +1,9 @@
-import LoginNJoinBox from '../common/components/LoginNJoinBox';
-import H1 from '../common/components/H1';
-import Name from '../join/Name';
-import Email from '../join/Email';
-import Password from '../join/Password';
-import Button from '../join/Button';
+import LoginNJoinBox from '../components/common/components/LoginNJoinBox';
+import H1 from '../components/common/components/H1';
+import Name from '../components/join/Name';
+import Email from '../components/join/Email';
+import Password from '../components/join/Password';
+import Button from '../components/join/Button';
 
 function JoinPage() {
   return (

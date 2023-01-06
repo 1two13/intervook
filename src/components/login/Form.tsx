@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import loginApi from '../api/loginApi';
-import { authSlice } from '../redux-toolkit/slices';
+import loginApi from '../../api/loginApi';
+import { authSlice } from '../../redux-toolkit/slices/authSlice';
 import Input from '../common/components/Input';
 
 function Form() {

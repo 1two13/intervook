@@ -1,14 +1,14 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { writingSlice } from '../redux-toolkit/slices';
+import { writingSlice } from '../redux-toolkit/slices/writingSlice';
 
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 
-import Buttons from '../writing/Buttons';
-import Title from '../writing/Title';
-import ShowLink from '../writing/ShowLink';
-import Icon from '../writing/Icon';
-import ShowImage from '../writing/ShowImage';
+import Buttons from '../components/writing/Buttons';
+import Title from '../components/writing/Title';
+import ShowLink from '../components/writing/ShowLink';
+import Icon from '../components/writing/Icon';
+import ShowImage from '../components/writing/ShowImage';
 
 function WritingPage() {
   const dispatch = useDispatch();

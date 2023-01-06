@@ -7,7 +7,7 @@ import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-import Icons from '../../assets/Icons';
+import Icons from '../../../assets/Icons';
 import IsHover from './IsHover';
 
 function Logged({ propFunction }: any) {

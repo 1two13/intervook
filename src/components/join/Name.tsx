@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { joinSlice } from '../redux-toolkit/slices';
+import { joinSlice } from '../../redux-toolkit/slices/joinSlice';
 
 import Label from './Label';
 import Input from '../common/components/Input';
