@@ -24,7 +24,7 @@ function TopFixedBar() {
 
   return (
     <>
-      <div className="sticky top-0 h-[75px] bg-[white]">
+      <div className="sticky top-0 h-[75px] bg-[white] z-[999]">
         <div className="flex w-[80%] h-[75px] m-auto items-center justify-between">
           <div onClick={moveToMainPage} className="cursor-pointer text-[36px]">
             인터뷰북
