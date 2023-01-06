@@ -9,7 +9,6 @@ import Title from '../writing/Title';
 import ShowLink from '../writing/ShowLink';
 import Icon from '../writing/Icon';
 import ShowImage from '../writing/ShowImage';
-import SelectedImage from '../writing/SelectedImage';
 
 function WritingPage() {
   const dispatch = useDispatch();
@@ -25,12 +24,6 @@ function WritingPage() {
   const isImage = useSelector((state: any) => {
     return state.writing.isImage;
   });
-  const isSelected = useSelector((state: any) => {
-    return state.writing.isSelected;
-  });
-  const imageUrl = useSelector((state: any) => {
-    return state.writing.imageUrl;
-  });
 
   return (
     <div className="w-[70%] m-auto bg-[white] border-[1px] border-lightGray">
@@ -45,7 +38,6 @@ function WritingPage() {
         <Title />
         {isLink && <ShowLink />}
         {isImage && <ShowImage />}
-        {isImage && isSelected && imageUrl !== '' && <SelectedImage />}
         <textarea
           placeholder="생각을 공유해주세요."
           className="w-[100%] h-[100vh] !important pt-[10px] outline-0 text-[18px] resize-none"
