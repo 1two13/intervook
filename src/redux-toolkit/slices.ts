@@ -34,7 +34,7 @@ export const joinSlice = createSlice({
 
 export const writingSlice = createSlice({
   name: 'writing',
-  initialState: { isLink: false, isImage: false, isSelected: false, imageUrl: '' },
+  initialState: { isLink: false, isImage: false, urlArray: [] as any },
   reducers: {
     link: (state, action) => {
       state.isLink = !state.isLink;
@@ -42,11 +42,8 @@ export const writingSlice = createSlice({
     image: (state, action) => {
       state.isImage = !state.isImage;
     },
-    selected: (state, action) => {
-      state.isSelected = action.payload;
-    },
-    imageUrl: (state, action) => {
-      state.imageUrl = action.payload;
+    urlArray: (state, action) => {
+      state.urlArray.push(action.payload);
     },
   },
 });
