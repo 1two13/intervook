@@ -16,7 +16,7 @@ function SearchNBtn() {
   return (
     <div className="w-[70%] h-[60px] m-auto mt-[30px] mb-[50px]">
       <input
-        placeholder="생각을 공유해주세요!"
+        placeholder={!isLogin ? '로그인을 먼저 해주세요.' : '생각을 공유해주세요!'}
         className="w-[75%] h-[100%] pl-[25px] border-[2px] rounded-[10px] border-lightGray cursor-pointer outline-0"
         onClick={moveToWritingPage}
         disabled={!isLogin}
