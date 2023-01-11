@@ -1,14 +1,16 @@
 import TopBar from '../components/myPage/TopBar';
-import ProfileNIntro from '../components/myPage/ProfileNIntro';
+import Profile from '../components/myPage/Profile';
 import Buttons from '../components/myPage/Buttons';
+import Introduction from '../components/myPage/Introduction';
 
 function MyPage() {
   return (
-    <div>
+    <>
       <TopBar />
-      <ProfileNIntro />
+      <Profile />
+      <Introduction />
       <Buttons />
-    </div>
+    </>
   );
 }
 
