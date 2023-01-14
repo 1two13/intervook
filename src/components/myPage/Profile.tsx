@@ -7,11 +7,8 @@ function Profile() {
   const imgRef = useRef<HTMLInputElement>(null);
 
   const onChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // 선택한 파일 정보
-    // const files = (e.currentTarget.files as FileList)[0];
     const files = (e.target.files as FileList)[0];
     const reader = new FileReader();
-    // console.log(files, reader);
 
     if (files === undefined) return;
 
