@@ -7,6 +7,7 @@ import LoginPage from './pages/LoginPage';
 import JoinPage from './pages/JoinPage';
 import MyPage from './pages/MyPage';
 import WritingPage from './pages/WritingPage';
+import CardPage from './pages/CardPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/join" element={<JoinPage />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/writing" element={<WritingPage />} />
+        <Route path="/card" element={<CardPage />} />
       </Routes>
     </div>
   );

@@ -1,10 +1,20 @@
+import { useNavigate } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 function Card() {
+  const navigate = useNavigate();
+  const moveToCardPage = () => {
+    navigate('/card');
+  };
+
   return (
-    <div className="flex mt-[18px] mb-[30px] pt-[5px] justify-between text-deepGray shadow-md bg-[white]">
+    <div
+      onClick={moveToCardPage}
+      className="flex mt-[18px] mb-[30px] pt-[5px] justify-between text-deepGray shadow-md bg-[white] cursor-pointer"
+    >
       <div className="ml-[15px] text-[12px]">
         <div className="mb-[-9px]">작성자</div>
         <div className="text-[24px] text-[black]">제목</div>
