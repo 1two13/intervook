@@ -23,7 +23,7 @@ function DropDownMenu() {
       {showMenu && (
         <div className="bg-bgColor border-[1px] border-deepGray">
           <div className="flex h-[70px] bg-[white] pl-[10px] items-center">
-            <img className="w-[30px] h-[30px] rounded-[50%] border-[1px] border-lightGray bg-deepGreen" />
+            <img className="w-[30px] h-[30px] rounded-[50%] border-[1px] border-lightGray bg-deepGray" />
             <div className="ml-[3px] cursor-pointer" onClick={moveToMyPage}>
               고토리
             </div>
@@ -33,8 +33,7 @@ function DropDownMenu() {
             <div className="pb-[6px]">
               <FontAwesomeIcon
                 size="lg"
-                color="deepGreen"
-                className="mr-[7px] cursor-pointer"
+                className="mr-[7px] cursor-pointer text-deepGreen"
                 icon={faHeart}
               />
               좋아요
@@ -42,8 +41,7 @@ function DropDownMenu() {
             <div className="pb-[6px]">
               <FontAwesomeIcon
                 size="lg"
-                color="deepGreen"
-                className="ml-[2px] mr-[10px] cursor-pointer"
+                className="ml-[2px] mr-[10px] cursor-pointer text-deepGreen"
                 icon={faBookmark}
               />
               북마크
@@ -51,8 +49,7 @@ function DropDownMenu() {
             <div>
               <FontAwesomeIcon
                 size="lg"
-                color="deepGreen"
-                className="mr-[7px] cursor-pointer"
+                className="mr-[7px] cursor-pointer text-deepGreen"
                 icon={faFolder}
               />
               저장한 게시물
