@@ -1,10 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faBookmark } from '@fortawesome/free-regular-svg-icons';
 import { faFolder } from '@fortawesome/free-regular-svg-icons';
+
+import DropDownMenuIcon from './DropDownMenuIcon';
 
 function DropDownMenu() {
   const navigate = useNavigate();
@@ -27,30 +28,9 @@ function DropDownMenu() {
           </div>
 
           <div className="flex flex-col h-[150px] pl-[10px] pt-[10px]">
-            <div className="pb-[6px]">
-              <FontAwesomeIcon
-                size="lg"
-                className="mr-[7px] cursor-pointer text-deepGreen"
-                icon={faHeart}
-              />
-              좋아요
-            </div>
-            <div className="pb-[6px]">
-              <FontAwesomeIcon
-                size="lg"
-                className="ml-[2px] mr-[10px] cursor-pointer text-deepGreen"
-                icon={faBookmark}
-              />
-              북마크
-            </div>
-            <div>
-              <FontAwesomeIcon
-                size="lg"
-                className="mr-[7px] cursor-pointer text-deepGreen"
-                icon={faFolder}
-              />
-              저장한 게시물
-            </div>
+            <DropDownMenuIcon icon={faHeart} text={'좋아요'} />
+            <DropDownMenuIcon icon={faBookmark} text={'북마크'} className={'ml-[2px]'} />
+            <DropDownMenuIcon icon={faFolder} text={'저장한 게시물'} />
           </div>
 
           <button className="float-right mt-[-19px] pb-[1px] pr-[3px] text-[12px] text-deepGray">
