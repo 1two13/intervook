@@ -12,14 +12,11 @@ function DropDownMenu() {
 
   const moveToMyPage = () => {
     navigate('/myPage');
-    // 드롭다운 메뉴 숨기기 (showMenu가 false로 변경됨)
     setShowMenu(!showMenu);
   };
-  // console.log(showMenu);
 
   return (
     <>
-      {/* showMenu가 true일 때 드롭다운 메뉴 보여주기 */}
       {showMenu && (
         <div className="bg-bgColor border-[1px] border-deepGray">
           <div className="flex h-[70px] bg-[white] pl-[10px] items-center">
