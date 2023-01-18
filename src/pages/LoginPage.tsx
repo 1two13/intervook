@@ -1,7 +1,7 @@
 import H1 from '../common/components/H1';
 import LoginNJoinBox from '../common/components/LoginNJoinBox';
-import Form from '../login/Form';
-import SocialLogin from '../login/SocialLogin';
+import Form from '../components/login/Form';
+import SocialLogin from '../components/login/SocialLogin';
 
 function LoginPage() {
   return (

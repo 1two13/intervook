@@ -1,17 +1,17 @@
-import { useRef, useState } from "react";
+import { useRef, useState } from 'react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
-import { faImage } from "@fortawesome/free-solid-svg-icons";
-import { faFolder } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faImage } from '@fortawesome/free-solid-svg-icons';
+import { faFolder } from '@fortawesome/free-regular-svg-icons';
 
-import Icon from "../writing/components/Icon";
-import Buttons from "../writing/components/Buttons";
+import Icon from '../components/writing/Icon';
+import Buttons from '../components/writing/Buttons';
 
 function WritingPage() {
   const [linkClicked, setLinkClicked] = useState(false);
   const [imgClicked, setImgClicked] = useState(false);
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState('');
   const [fileSelector, setFileSelector] = useState(true);
   const imgRef = useRef<HTMLInputElement>(null);
 
@@ -39,7 +39,7 @@ function WritingPage() {
   };
 
   const deleteImg = () => {
-    setImageUrl("");
+    setImageUrl('');
   };
 
   return (
@@ -90,7 +90,7 @@ function WritingPage() {
         )}
 
         {/* 파일 선택 버튼을 클릭했을 때 보여지는 UI */}
-        {imgClicked && fileSelector && imageUrl !== "" && (
+        {imgClicked && fileSelector && imageUrl !== '' && (
           <div className="relative mt-[20px]">
             <div
               onClick={deleteImg}

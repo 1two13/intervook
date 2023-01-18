@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { joinSlice } from '../redux-toolkit/slices';
+import { joinSlice } from '../../redux-toolkit/slices';
 
 import Label from './Label';
-import Input from '../common/components/Input';
+import Input from '../../common/components/Input';
 import Message from './Message';
 
 function Name() {

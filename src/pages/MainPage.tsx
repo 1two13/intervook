@@ -1,6 +1,6 @@
-import SearchNBtn from "../main/components/SearchNBtn";
-import Buttons from "../main/components/Buttons";
-import Card from "../main/components/Card";
+import SearchNBtn from '../components/main/SearchNBtn';
+import Buttons from '../components/main/Buttons';
+import Card from '../components/main/Card';
 
 function MainPages() {
   return (

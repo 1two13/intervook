@@ -1,6 +1,6 @@
-import TopBar from "../myPage/components/TopBar";
-import ProfileNIntro from "../myPage/components/ProfileNIntro";
-import Buttons from "../myPage/components/Buttons";
+import TopBar from '../components/myPage/TopBar';
+import ProfileNIntro from '../components/myPage/ProfileNIntro';
+import Buttons from '../components/myPage/Buttons';
 
 function MyPage() {
   return (
