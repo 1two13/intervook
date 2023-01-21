@@ -12,7 +12,12 @@ function Card() {
   };
   const [isLike, setIsLike] = useState(false);
   const [isBookmark, setIsBookmark] = useState(false);
-  const clickLike = () => setIsLike(!isLike);
+  const [count, setCount] = useState(0);
+  const clickLike = () => {
+    setIsLike(!isLike);
+    if (!isLike) setCount((count) => (count += 1));
+    else setCount((count) => (count -= 1));
+  };
   const clickBookmark = () => setIsBookmark(!isBookmark);
 
   return (
@@ -41,7 +46,7 @@ function Card() {
               className={isLike ? 'text-deepGreen' : ''}
             />
           </button>
-          <div className="text-[8px]">좋아요 7</div>
+          <div className="pr-[5px] text-[8px]">{count}</div>
         </div>
 
         <button onClick={clickBookmark} className="flex pt-[2px]">
