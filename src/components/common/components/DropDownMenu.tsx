@@ -8,6 +8,8 @@ import { faFolder } from '@fortawesome/free-regular-svg-icons';
 import DropDownMenuIcon from './DropDownMenuIcon';
 
 function DropDownMenu() {
+  const imageUrl =
+    'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png';
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(true);
 
@@ -21,7 +23,7 @@ function DropDownMenu() {
       {showMenu && (
         <div className="bg-bgColor border-[1px] border-deepGray">
           <div className="flex h-[70px] bg-[white] pl-[10px] items-center">
-            <img className="w-[30px] h-[30px] rounded-[50%] border-[1px] border-lightGray bg-deepGray" />
+            <img src={imageUrl} className="w-[30px] h-[30px] rounded-[50%]" />
             <div className="ml-[3px] cursor-pointer" onClick={moveToMyPage}>
               고토리
             </div>
