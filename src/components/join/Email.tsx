@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { joinSlice } from '../../redux-toolkit/slices/joinSlice';
-import InputBox from '../common/components/InputBox';
+import Input from '../common/components/Input';
+import Label from './Label';
+import Message from './Message';
 
 function Email() {
   const dispatch = useDispatch();
@@ -25,15 +27,14 @@ function Email() {
 
   return (
     <>
-      <InputBox
-        label={'이메일'}
-        placeholder={'example@interviewbook.com'}
-        name={'email'}
-        type={'text'}
+      <Label name={'이메일'} />
+      <Input
+        placeholder="example@interviewbook.com"
+        name="email"
+        type="text"
         onChange={onChangeEmail}
-        input={email}
-        message={message}
       />
+      {email.length > 0 ? <Message message={message} /> : ''}
     </>
   );
 }

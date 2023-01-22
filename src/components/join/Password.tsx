@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { joinSlice } from '../../redux-toolkit/slices/joinSlice';
-import InputBox from '../common/components/InputBox';
+import Input from '../common/components/Input';
+import Label from './Label';
+import Message from './Message';
 
 function Password() {
   const dispatch = useDispatch();
@@ -24,15 +26,14 @@ function Password() {
 
   return (
     <>
-      <InputBox
-        label={'비밀번호'}
-        placeholder={'영문, 숫자 포함 6자 이상'}
-        name={'password'}
-        type={'password'}
+      <Label name={'비밀번호'} />
+      <Input
+        placeholder="영문, 숫자 포함 6자 이상"
+        name="password"
+        type="password"
         onChange={onChangePassword}
-        input={password}
-        message={message}
       />
+      {password.length > 0 ? <Message message={message} /> : ''}
     </>
   );
 }

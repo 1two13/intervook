@@ -2,7 +2,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { joinSlice } from '../../redux-toolkit/slices/joinSlice';
-import InputBox from '../common/components/InputBox';
+import Label from './Label';
+import Input from '../common/components/Input';
+import Message from './Message';
 
 function Name() {
   const dispatch = useDispatch();
@@ -23,15 +25,9 @@ function Name() {
 
   return (
     <>
-      <InputBox
-        label={'이름'}
-        placeholder={'프로필 이름'}
-        name={'name'}
-        type={'text'}
-        onChange={onChangeName}
-        input={name}
-        message={message}
-      />
+      <Label name={'이름'} />
+      <Input placeholder="프로필 이름" name="name" type="text" onChange={onChangeName} />
+      {name.length > 0 ? <Message message={message} /> : ''}
     </>
   );
 }
