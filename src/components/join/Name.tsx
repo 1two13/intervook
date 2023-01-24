@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { joinSlice } from '../../redux-toolkit/slices/joinSlice';
 import Label from './Label';
@@ -8,6 +8,7 @@ import Message from './Message';
 
 function Name() {
   const dispatch = useDispatch();
+  const selector = useSelector((state: any) => state.join.isName);
   const [name, setName] = useState<string>('');
   const [message, setMessage] = useState<string>('');
 
@@ -27,7 +28,11 @@ function Name() {
     <>
       <Label name={'이름'} />
       <Input placeholder="프로필 이름" name="name" type="text" onChange={onChangeName} />
-      {name.length > 0 ? <Message message={message} /> : ''}
+      {name.length > 0 && selector ? (
+        <Message message={message} textColor="text-deepGray" />
+      ) : (
+        <Message message={message} textColor="text-[red]" />
+      )}
     </>
   );
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { joinSlice } from '../../redux-toolkit/slices/joinSlice';
 import Input from '../common/components/Input';
@@ -8,6 +8,7 @@ import Message from './Message';
 
 function Password() {
   const dispatch = useDispatch();
+  const selector = useSelector((state: any) => state.join.isPassword);
   const [password, setPassword] = useState<string>('');
   const [message, setMessage] = useState<string>('');
 
@@ -33,7 +34,11 @@ function Password() {
         type="password"
         onChange={onChangePassword}
       />
-      {password.length > 0 ? <Message message={message} /> : ''}
+      {password.length > 0 && selector ? (
+        <Message message={message} textColor="text-deepGray" />
+      ) : (
+        <Message message={message} textColor="text-[red]" />
+      )}
     </>
   );
 }

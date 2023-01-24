@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { joinSlice } from '../../redux-toolkit/slices/joinSlice';
 import Input from '../common/components/Input';
@@ -8,6 +8,7 @@ import Message from './Message';
 
 function Email() {
   const dispatch = useDispatch();
+  const selector = useSelector((state: any) => state.join.isEmail);
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
 
@@ -34,7 +35,11 @@ function Email() {
         type="text"
         onChange={onChangeEmail}
       />
-      {email.length > 0 ? <Message message={message} /> : ''}
+      {email.length > 0 && selector ? (
+        <Message message={message} textColor="text-deepGray" />
+      ) : (
+        <Message message={message} textColor="text-[red]" />
+      )}
     </>
   );
 }
