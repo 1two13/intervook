@@ -14,11 +14,14 @@ function JoinPage() {
     return [state.join.isName, state.join.isEmail, state.join.isPassword];
   });
   const isValidate = selector.every((el) => el === true);
+  const email = useSelector((state: any) => state.join.email);
+  const password = useSelector((state: any) => state.join.password);
+  const nickname = useSelector((state: any) => state.join.name);
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const fetchUrl = `/api/auth/join?email=${selector[1]}&password=${selector[2]}&nickname=${selector[0]}`;
+    const fetchUrl = `/api/auth/join?email=${email}&password=${password}&nickname=${nickname}`;
     fetch(fetchUrl, {
       method: 'POST',
     })
