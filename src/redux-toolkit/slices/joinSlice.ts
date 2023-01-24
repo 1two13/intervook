@@ -1,8 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  isName: false,
+  isEmail: false,
+  isPassword: false,
+  name: '',
+  email: '',
+  password: '',
+};
+
 export const joinSlice = createSlice({
   name: 'join',
-  initialState: { isName: false, isEmail: false, isPassword: false },
+  initialState: initialState,
   reducers: {
     isName: (state, action) => {
       state.isName = action.payload;
@@ -12,6 +21,15 @@ export const joinSlice = createSlice({
     },
     isPassword: (state, action) => {
       state.isPassword = action.payload;
+    },
+    name: (state, action) => {
+      state.name = action.payload;
+    },
+    email: (state, action) => {
+      state.email = action.payload;
+    },
+    password: (state, action) => {
+      state.password = action.payload;
     },
   },
 });
