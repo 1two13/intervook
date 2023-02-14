@@ -10,6 +10,8 @@ module.exports = {
       deepGray: '#B4B4B4',
       lightGray: '#D9D9D9',
       bgColor: '#F7F7F7',
+      purple: '#E1BEE7',
+      blue: '#61DAFB',
     },
     screens: {
       min: '530px', // @media screen and (min-width: 530px)
