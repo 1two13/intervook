@@ -12,6 +12,9 @@ function SearchNBtn() {
   const isLogin = useSelector((state: any) => {
     return state.auth.isLogin;
   });
+  const moveToQuizPage = () => {
+    navigate('/quiz');
+  };
 
   return (
     <div className="w-[70%] h-[60px] m-auto mt-[30px] mb-[50px]">
@@ -21,7 +24,10 @@ function SearchNBtn() {
         onClick={moveToWritingPage}
         disabled={!isLogin}
       />
-      <button className="w-[20%] h-[100%] ml-[5%] rounded-[80px] bg-deepGreen text-[white] text-[20px]">
+      <button
+        onClick={moveToQuizPage}
+        className="w-[20%] h-[100%] ml-[5%] rounded-[80px] bg-deepGreen text-[white] text-[20px]"
+      >
         퀴즈
         <FontAwesomeIcon icon={faArrowRight} className="pl-[5px]" />
       </button>
