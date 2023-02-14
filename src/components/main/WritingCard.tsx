@@ -5,7 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
-function Card() {
+import Card from '../common/components/Card';
+
+function WritingCard() {
   const navigate = useNavigate();
   const moveToCardPage = () => {
     navigate('/card');
@@ -21,7 +23,7 @@ function Card() {
   const clickBookmark = () => setIsBookmark(!isBookmark);
 
   return (
-    <div className="flex pt-[2%] justify-between text-deepGray shadow-md bg-lightGray/20 cursor-pointer">
+    <Card>
       <div onClick={moveToCardPage} className="w-[90%]">
         <div className="ml-[15px] text-[12px]">
           <div className="mb-[-9px]">작성자</div>
@@ -57,8 +59,8 @@ function Card() {
           />
         </button>
       </div>
-    </div>
+    </Card>
   );
 }
 
-export default Card;
+export default WritingCard;
