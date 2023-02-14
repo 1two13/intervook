@@ -21,7 +21,7 @@ function Card() {
   const clickBookmark = () => setIsBookmark(!isBookmark);
 
   return (
-    <div className="flex mt-[18px] mb-[30px] pt-[5px] justify-between text-deepGray shadow-md bg-[white] cursor-pointer">
+    <div className="flex pt-[2%] justify-between text-deepGray shadow-md bg-lightGray/20 cursor-pointer">
       <div onClick={moveToCardPage} className="w-[90%]">
         <div className="ml-[15px] text-[12px]">
           <div className="mb-[-9px]">작성자</div>
@@ -43,7 +43,7 @@ function Card() {
             <FontAwesomeIcon
               icon={faThumbsUp}
               size="2x"
-              className={isLike ? 'text-deepGreen' : ''}
+              className={isLike ? 'text-deepGreen' : 'text-lightGray'}
             />
           </button>
           <div className="pr-[5px] text-[8px]">{count}</div>
@@ -53,7 +53,7 @@ function Card() {
           <FontAwesomeIcon
             icon={faBookmark}
             size="2x"
-            className={isBookmark ? 'text-deepGreen' : ''}
+            className={isBookmark ? 'text-deepGreen' : 'text-lightGray'}
           />
         </button>
       </div>

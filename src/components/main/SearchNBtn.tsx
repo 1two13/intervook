@@ -17,7 +17,7 @@ function SearchNBtn() {
   };
 
   return (
-    <div className="w-[70%] h-[60px] m-auto mt-[30px] mb-[50px]">
+    <div className="w-[70%] h-[60px] m-auto mt-[7%] mb-[9%]">
       <input
         placeholder={!isLogin ? '로그인을 먼저 해주세요.' : '생각을 공유해주세요!'}
         className="w-[75%] h-[100%] pl-[25px] border-[2px] rounded-[10px] border-lightGray cursor-pointer outline-0"
@@ -26,7 +26,7 @@ function SearchNBtn() {
       />
       <button
         onClick={moveToQuizPage}
-        className="w-[20%] h-[100%] ml-[5%] rounded-[80px] bg-deepGreen text-[white] text-[20px]"
+        className="w-[20%] h-[100%] ml-[5%] rounded-[80px] bg-deepGreen font-semibold text-[white] text-[21px]"
       >
         퀴즈
         <FontAwesomeIcon icon={faArrowRight} className="pl-[5px]" />
