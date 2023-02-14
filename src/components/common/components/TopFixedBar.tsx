@@ -8,6 +8,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import UnLogged from './UnLogged';
 import Logged from './Logged';
 import Hamburger from './Hamburger';
+import Logo from '../../../assets/logo/ms-icon-70x70.png';
 
 function TopFixedBar() {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ function TopFixedBar() {
       <div className="sticky top-0 h-[75px] bg-[white] z-[999]">
         <div className="flex w-[80%] h-[75px] m-auto items-center justify-between">
           <div onClick={moveToMainPage} className="cursor-pointer text-[36px]">
-            인터뷰북
+            <img src={Logo} />
           </div>
 
           <div className="flex items-center">
