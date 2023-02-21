@@ -8,7 +8,7 @@ interface IQuizCard {
 
 function QuizCard({ category, type, title }: IQuizCard) {
   return (
-    <div className="flex flex-col h-[100%] p-[2%] justify-between shadow-md bg-lightGray/10 cursor-pointer">
+    <div className="flex flex-col h-[100%] max-h-[100px] p-[2%] justify-between shadow-md bg-lightGray/10 cursor-pointer">
       <div className="flex">
         {category === 'CS' ? (
           <Button
