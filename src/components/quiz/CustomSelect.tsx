@@ -1,18 +1,24 @@
 import Select from 'react-select';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectSlice } from '../../redux-toolkit/slices/selectSlice';
 
 interface ICustomSelect {
+  reference: any;
   options: Array<Object>;
   placeholder: string;
-  reference: any;
+  index: any;
 }
 
-function CustomSelect({ options, placeholder, reference }: ICustomSelect) {
-  const [selected, setSelected] = useState('');
+function CustomSelect({ reference, options, placeholder, index }: ICustomSelect) {
+  const dispatch = useDispatch();
   const onChangeSelect = (e: any) => {
-    if (e) setSelected(e.value);
-    else setSelected('');
+    if (e && index === 0) dispatch(selectSlice.actions.updateCategory(e.value));
+    else if (e && index === 1) dispatch(selectSlice.actions.updateType(e.value));
+    else dispatch(selectSlice.actions.reset());
   };
+  const selector = useSelector((state: any) => state.select.array);
+  console.log(selector);
 
   return (
     <Select
