@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import QuizCard from '../components/quiz/QuizCard';
 import CustomSelect from '../components/quiz/CustomSelect';
@@ -23,6 +24,8 @@ function QuizPage() {
   ];
   const firstSelectRef = useRef<any>(null);
   const secondSelectRef = useRef<any>(null);
+  const selector = useSelector((state: any) => state.select.array);
+  const isClick = useSelector((state: any) => state.select.isClick);
 
   const onClickResetButton = () => {
     if (firstSelectRef.current || secondSelectRef.current) {
@@ -57,9 +60,24 @@ function QuizPage() {
 
       {/*데이터가 없어서 임시 데이터 더미 생성*/}
       <div className="grid grid-cols-2 gap-10 w-[80%] mt-[0.5%]">
-        {data.map((el) => (
-          <QuizCard key={el.id} category={el.category} type={el.type} title={el.title} />
-        ))}
+        {!isClick
+          ? data.map((el) => (
+              <QuizCard key={el.id} category={el.category} type={el.type} title={el.title} />
+            ))
+          : ''}
+        {/* selector에 빈배열이 있을 때 */}
+        {isClick && selector.includes('')
+          ? data
+              .filter((el) => el.category === selector[0] || el.type === selector[1])
+              .map((el) => (
+                <QuizCard key={el.id} category={el.category} type={el.type} title={el.title} />
+              ))
+          : data
+              .filter((el) => el.category === selector[0])
+              .filter((el) => el.type === selector[1])
+              .map((el) => (
+                <QuizCard key={el.id} category={el.category} type={el.type} title={el.title} />
+              ))}
       </div>
     </div>
   );
