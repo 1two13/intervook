@@ -18,7 +18,6 @@ function CustomSelect({ reference, options, placeholder, index }: ICustomSelect)
     else dispatch(selectSlice.actions.reset());
   };
   const selector = useSelector((state: any) => state.select.array);
-  console.log(selector);
 
   return (
     <Select
