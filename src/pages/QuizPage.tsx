@@ -7,7 +7,7 @@ function QuizPage() {
 
   return (
     <div className="flex w-[70%] m-auto mb-[150px] mt-[7%]">
-      <div className="w-[25%] h-[100%] p-[2%] mr-[3%] shadow bg-lightGray/20">
+      <div className="w-[25%] h-[100%] p-[2%] mr-[3%] shadow bg-lightGray/10">
         <h1 className="text-lg font-bold">문제 검색</h1>
         <CustomSelect list={FIRST_SELECT} />
         <CustomSelect list={SECOND_SELECT} />
