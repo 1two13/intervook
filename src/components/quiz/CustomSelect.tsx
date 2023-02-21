@@ -1,27 +1,27 @@
+import Select from 'react-select';
 import { useState } from 'react';
 
 interface ICustomSelect {
-  list: Array<string>;
+  options: Array<Object>;
+  placeholder: string;
+  reference: any;
 }
 
-function CustomSelect({ list }: ICustomSelect) {
+function CustomSelect({ options, placeholder, reference }: ICustomSelect) {
   const [selected, setSelected] = useState('');
-  const handleSelect = (e: any) => {
-    setSelected(e.target.value);
+  const onChangeSelect = (e: any) => {
+    if (e) setSelected(e.value);
+    else setSelected('');
   };
 
   return (
-    <select
-      value={selected}
-      onChange={handleSelect}
-      className="w-[100%] py-[4%] mt-[4%] mb-[2%] shadow border-lightGray cursor-pointer"
-    >
-      {list.map((item) => (
-        <option value={item} key={item}>
-          {item}
-        </option>
-      ))}
-    </select>
+    <Select
+      ref={reference}
+      onChange={onChangeSelect}
+      options={options}
+      placeholder={placeholder}
+      className={'mt-[3%] mb-[2%]'}
+    />
   );
 }
 
