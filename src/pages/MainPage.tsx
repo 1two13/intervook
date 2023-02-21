@@ -4,7 +4,7 @@ import WritingCard from '../components/main/WritingCard';
 
 function MainPages() {
   return (
-    <div className="w-[70%] m-auto mb-[10%] border-2">
+    <div className="w-[70%] m-auto mb-[10%]">
       <SearchNBtn />
       <Buttons />
       {/*데이터가 없어서 우선 하드코딩, 추후 map으로 데이터 보여줄 예정*/}
