@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import QuizCard from '../components/quiz/QuizCard';
