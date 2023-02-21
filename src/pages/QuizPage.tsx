@@ -4,15 +4,22 @@ import QuizCard from '../components/quiz/QuizCard';
 import CustomSelect from '../components/quiz/CustomSelect';
 
 function QuizPage() {
-  const FIRST_SELECT_NAME = '카테고리 선택';
-  const SECOND_SELECT_NAME = '문제유형 선택';
-  const FIRST_SELECT = [
+  const CATEGORY_SELECT = '카테고리 선택';
+  const TYPE_SELECT = '문제유형 선택';
+  const CATEGORY_LIST = [
     { value: 'CS', label: 'CS' },
     { value: '프론트', label: '프론트' },
   ];
-  const SECOND_SELECT = [
+  const TYPE_LIST = [
     { value: '단답형', label: '단답형' },
     { value: '서술형', label: '서술형' },
+  ];
+  // 임시 데이터
+  const data = [
+    { id: 0, category: '프론트', type: '단답형', title: '1' },
+    { id: 1, category: '프론트', type: '서술형', title: '2' },
+    { id: 2, category: 'CS', type: '단답형', title: '3' },
+    { id: 3, category: 'CS', type: '서술형', title: '4' },
   ];
   const firstSelectRef = useRef<any>(null);
   const secondSelectRef = useRef<any>(null);
@@ -29,14 +36,16 @@ function QuizPage() {
       <div className="w-[25%] h-[100%] p-[2%] mr-[3%] shadow bg-lightGray/10">
         <h1 className="text-lg font-bold">문제 검색</h1>
         <CustomSelect
-          options={FIRST_SELECT}
-          placeholder={FIRST_SELECT_NAME}
+          options={CATEGORY_LIST}
+          placeholder={CATEGORY_SELECT}
           reference={firstSelectRef}
+          index={0}
         />
         <CustomSelect
-          options={SECOND_SELECT}
-          placeholder={SECOND_SELECT_NAME}
+          options={TYPE_LIST}
+          placeholder={TYPE_SELECT}
           reference={secondSelectRef}
+          index={1}
         />
         <button
           onClick={() => onClickResetButton()}
@@ -46,16 +55,11 @@ function QuizPage() {
         </button>
       </div>
 
-      {/*데이터가 없어서 우선 하드코딩, 추후 map으로 데이터 보여줄 예정*/}
+      {/*데이터가 없어서 임시 데이터 더미 생성*/}
       <div className="grid grid-cols-2 gap-10 w-[80%] mt-[0.5%]">
-        <QuizCard category={'프론트'} type={'단답형'} title={'캐시 메모리'} />
-        <QuizCard category={'프론트'} type={'서술형'} title={'캐시 메모리'} />
-        <QuizCard category={'CS'} type={'단답형'} title={'캐시 메모리'} />
-        <QuizCard category={'CS'} type={'서술형'} title={'캐시 메모리'} />
-        <QuizCard category={'프론트'} type={'단답형'} title={'캐시 메모리'} />
-        <QuizCard category={'프론트'} type={'서술형'} title={'캐시 메모리'} />
-        <QuizCard category={'CS'} type={'단답형'} title={'캐시 메모리'} />
-        <QuizCard category={'CS'} type={'서술형'} title={'캐시 메모리'} />
+        {data.map((el) => (
+          <QuizCard key={el.id} category={el.category} type={el.type} title={el.title} />
+        ))}
       </div>
     </div>
   );
