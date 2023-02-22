@@ -38,7 +38,7 @@ function TopFixedBar() {
           </div>
         </div>
 
-        <div className="border-b-[1px] border-b-[#dbdbdb]"></div>
+        <div className="border-b-[1px] border-b-lightGray/40"></div>
       </div>
 
       {/* menuToggle이 true이면서, 스크린 크기가 min보다 작을 때 드롭다운 메뉴 보여주기 */}
