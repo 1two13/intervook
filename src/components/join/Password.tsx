@@ -26,7 +26,7 @@ function Password() {
   };
 
   return (
-    <>
+    <div className="w-[70%] h-[20%]">
       <Label name={'비밀번호'} />
       <Input
         placeholder="영문, 숫자 포함 6자 이상"
@@ -39,7 +39,7 @@ function Password() {
       ) : (
         <Message message={message} textColor="text-[red]" />
       )}
-    </>
+    </div>
   );
 }
 

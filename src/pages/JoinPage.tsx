@@ -35,17 +35,19 @@ function JoinPage() {
   };
 
   return (
-    <div className="flex h-screen justify-center items-center">
-      <LoginJoinBox>
-        <H1 name={'회원가입'} />
-
-        <form onSubmit={onSubmitHandler} className="flex flex-col">
-          <Name />
-          <Email />
-          <Password />
-          <Button isValidate={isValidate} />
-        </form>
-      </LoginJoinBox>
+    <div className="flex flex-col h-screen mt-[3%] items-center">
+      <H1 name={'회원가입'} />
+      <div className="w-[30%] my-[1%] border-[1px] border-lightGray/30"></div>
+      <form
+        onSubmit={onSubmitHandler}
+        className="w-[40%] h-[60%] flex flex-col items-center justify-around"
+      >
+        <Name />
+        <Email />
+        <Password />
+        <Password />
+        <Button isValidate={isValidate} />
+      </form>
     </div>
   );
 }

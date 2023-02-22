@@ -24,15 +24,15 @@ function Name() {
   };
 
   return (
-    <>
-      <Label name={'이름'} />
+    <div className="w-[70%] h-[20%]">
+      <Label name={'닉네임'} />
       <Input placeholder="프로필 이름" name="name" type="text" onChange={onChangeName} />
       {name.length > 0 && isName ? (
         <Message message={message} textColor="text-deepGray" />
       ) : (
         <Message message={message} textColor="text-[red]" />
       )}
-    </>
+    </div>
   );
 }
 

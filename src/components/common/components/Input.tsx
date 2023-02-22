@@ -12,7 +12,7 @@ function Input({ placeholder, name, type, onChange }: IInput) {
       name={name}
       type={type}
       onChange={onChange}
-      className="w-[260px] h-[45px] pl-[10px] mb-[26px] text-[13px] placeholder:text-deepGray border-[0.7px] rounded-[7px] border-deepGray"
+      className="w-[100%] h-[45%] pl-[10px] text-[13px] placeholder:text-deepGray border-[0.7px] rounded-[7px] border-lightGray/10 bg-lightGray/10 shadow"
     />
   );
 }

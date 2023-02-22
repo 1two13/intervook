@@ -27,7 +27,7 @@ function Email() {
   };
 
   return (
-    <>
+    <div className="w-[70%] h-[20%]">
       <Label name={'이메일'} />
       <Input
         placeholder="example@interviewbook.com"
@@ -40,7 +40,7 @@ function Email() {
       ) : (
         <Message message={message} textColor="text-[red]" />
       )}
-    </>
+    </div>
   );
 }
 
