@@ -7,11 +7,12 @@ import Name from '../components/join/Name';
 import Email from '../components/join/Email';
 import Password from '../components/join/Password';
 import Button from '../components/join/Button';
+import CheckPassword from '../components/join/CheckPassword';
 
 function JoinPage() {
   const navigate = useNavigate();
   const selector = useSelector((state: any) => {
-    return [state.join.isName, state.join.isEmail, state.join.isPassword];
+    return [state.join.isName, state.join.isEmail, state.join.isPassword, state.join.isCorrect];
   });
   const isValidate = selector.every((el) => el === true);
   const email = useSelector((state: any) => state.join.email);
@@ -45,7 +46,7 @@ function JoinPage() {
         <Name />
         <Email />
         <Password />
-        <Password />
+        <CheckPassword />
         <Button isValidate={isValidate} />
       </form>
     </div>
