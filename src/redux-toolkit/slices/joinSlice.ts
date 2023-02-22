@@ -1,9 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+interface IInitialState {
+  isName: boolean;
+  isEmail: boolean;
+  isPassword: boolean;
+  isCorrect: boolean;
+  name: string;
+  email: string;
+  password: string;
+}
+
+const initialState: IInitialState = {
   isName: false,
   isEmail: false,
   isPassword: false,
+  isCorrect: false,
   name: '',
   email: '',
   password: '',
@@ -21,6 +32,9 @@ export const joinSlice = createSlice({
     },
     isPassword: (state, action) => {
       state.isPassword = action.payload;
+    },
+    isCorrect: (state, action) => {
+      state.isCorrect = action.payload;
     },
     name: (state, action) => {
       state.name = action.payload;
