@@ -26,31 +26,33 @@ function Form() {
   };
 
   return (
-    <form onSubmit={onSubmitHandler} className="flex flex-col">
-      <Input
-        placeholder="이메일"
-        name="email"
-        type="text"
-        onChange={(e) => {
-          setEmail(e.target.value);
-          setIsEmail(true);
-        }}
-      />
-      <Input
-        placeholder="비밀번호"
-        name="password"
-        type="password"
-        onChange={(e) => {
-          setPassword(e.target.value);
-          setIsPassword(true);
-        }}
-      />
+    <form onSubmit={onSubmitHandler} className="flex flex-col w-[75%] h-[50%] justify-evenly">
+      <div className="h-[55%]">
+        <Input
+          placeholder="이메일"
+          name="email"
+          type="text"
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setIsEmail(true);
+          }}
+        />
+        <Input
+          placeholder="비밀번호"
+          name="password"
+          type="password"
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setIsPassword(true);
+          }}
+        />
+      </div>
 
       <button
         className={
           isEmail && isPassword
-            ? 'w-[260px] h-[45px] pl-[10px] mb-[26px] text-[16px] border-[0.7px] rounded-[7px] bg-deepGreen text-[white]'
-            : 'w-[260px] h-[45px] pl-[10px] mb-[26px] text-[16px] border-[0.7px] rounded-[7px] bg-deepGray text-[white]'
+            ? 'h-[25%] pl-[10px] text-[16px] border-[0.7px] rounded-[7px] bg-deepGreen text-[white]'
+            : 'h-[25%] pl-[10px] text-[16px] border-[0.7px] rounded-[7px] bg-deepGray text-[white]'
         }
         disabled={!(isEmail && isPassword)}
       >
