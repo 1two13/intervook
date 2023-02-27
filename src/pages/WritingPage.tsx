@@ -32,7 +32,10 @@ function WritingPage() {
     return state.writing.isImage;
   });
 
-  const resizeHeight = (textarea: any, e: any) => {
+  const resizeHeight = (
+    textarea: React.RefObject<HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     if (textarea.current) {
       textarea.current.style.height = 'auto';
       textarea.current.style.height = textarea.current.scrollHeight + 'px';
