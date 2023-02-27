@@ -14,7 +14,7 @@ import ShowImage from '../components/writing/ShowImage';
 import Button from '../components/common/components/Button';
 
 function WritingPage() {
-  const [text, setText] = useState('생각을 공유해주세요.');
+  const [text, setText] = useState('');
   const [clicked, setClicked] = useState(0);
   const textarea = useRef(null);
   const dispatch = useDispatch();
@@ -64,7 +64,8 @@ function WritingPage() {
         {isLink && <ShowLink />}
         {isImage && <ShowImage />}
         <textarea
-          className="w-full my-[1%] p-[1%] focus:outline-none"
+          className="w-full my-[1%] p-[1%] focus:outline-none placeholder:text-deepGray"
+          placeholder="생각을 공유해주세요."
           ref={textarea}
           value={text}
           onChange={(e) => resizeHeight(textarea, e)}
