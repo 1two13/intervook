@@ -8,7 +8,7 @@ function ShowLink() {
   };
 
   return (
-    <div className="flex w-[100%] h-[60px] mt-[20px] border-[1px] border-lightGray">
+    <div className="flex w-[100%] h-[60px] border-[1px] border-lightGray">
       <input
         onChange={onChange}
         placeholder="https://"
