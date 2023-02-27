@@ -28,11 +28,7 @@ function WritingCard() {
           <div className="mt-[-2%]">소제목</div>
           <div className="">작성자</div>
 
-          <div className="flex my-[5%] text-[14px]">
-            <div>#태그</div>
-            <div>#태그</div>
-            <div>#태그</div>
-          </div>
+          <div className="flex my-[5%] text-[14px]">#태그</div>
         </div>
       </div>
 
