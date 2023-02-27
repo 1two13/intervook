@@ -31,7 +31,7 @@ function ShowImage() {
 
   return (
     <>
-      <div className="flex justify-center items-center w-[100%] h-[140px] mt-[20px] outline-0 rounded-[5px] border-[1px] border-lightGray border-dashed">
+      <div className="flex justify-center items-center w-[100%] h-[140px] mt-[2%] outline-0 rounded-[5px] border-[1px] border-lightGray border-dashed">
         <button
           onClick={() => {
             imgRef.current?.click();
