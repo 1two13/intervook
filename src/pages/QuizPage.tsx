@@ -13,6 +13,7 @@ function QuizPage() {
   ];
   const TYPE_LIST = [
     { value: '단답형', label: '단답형' },
+    { value: '빈칸채우기', label: '빈칸채우기' },
     { value: '서술형', label: '서술형' },
   ];
   // 임시 데이터
@@ -21,6 +22,8 @@ function QuizPage() {
     { id: 1, category: '프론트', type: '서술형', title: '2' },
     { id: 2, category: 'CS', type: '단답형', title: '3' },
     { id: 3, category: 'CS', type: '서술형', title: '4' },
+    { id: 4, category: 'CS', type: '빈칸채우기', title: '3' },
+    { id: 5, category: '프론트', type: '빈칸채우기', title: '4' },
   ];
   const firstSelectRef = useRef<any>(null);
   const secondSelectRef = useRef<any>(null);

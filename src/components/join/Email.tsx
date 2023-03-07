@@ -30,7 +30,7 @@ function Email() {
     <div className="w-[70%] h-[20%]">
       <Label name={'이메일'} />
       <Input
-        placeholder="example@interviewbook.com"
+        placeholder="example@intervook.com"
         name="email"
         type="text"
         onChange={onChangeEmail}

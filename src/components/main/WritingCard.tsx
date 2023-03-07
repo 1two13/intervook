@@ -25,7 +25,6 @@ function WritingCard() {
       <div onClick={moveToCardPage} className="w-[90%]">
         <div className="ml-[15px] text-[12px]">
           <div className="text-[24px] text-[black]">제목</div>
-          <div className="mt-[-2%]">소제목</div>
           <div className="">작성자</div>
 
           <div className="flex my-[5%] text-[14px]">#태그</div>
