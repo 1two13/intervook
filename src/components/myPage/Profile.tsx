@@ -19,7 +19,7 @@ function Profile() {
   };
 
   return (
-    <div className="flex flex-col mt-[70px] justify-center items-center">
+    <div className="flex flex-col my-[3%] justify-center items-center">
       <div className="flex flex-col justify-center items-center">
         <label className="w-[25vh] h-[25vh] rounded-[50%] border-[1px] border-lightGray cursor-pointer">
           <img
@@ -41,8 +41,8 @@ function Profile() {
       </div>
 
       <input
-        placeholder="고주디"
-        className="w-[23%] py-[3px] mt-[15px] mb-[60px] text-center text-[black] bg-lightGray/50 focus:outline-none"
+        placeholder="닉네임"
+        className="w-[15%] py-[3px] mt-[15px] mb-[2px] text-center text-[black] bg-lightGray/30 focus:outline-none"
       />
     </div>
   );

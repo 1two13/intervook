@@ -1,6 +1,9 @@
 import { useRef } from 'react';
 import { useSelector } from 'react-redux';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUndo } from '@fortawesome/free-solid-svg-icons';
+
 import QuizCard from '../components/quiz/QuizCard';
 import CustomSelect from '../components/quiz/CustomSelect';
 
@@ -40,7 +43,7 @@ function QuizPage() {
   return (
     <div className="flex w-[70%] m-auto mb-[150px] mt-[7%]">
       <div className="w-[25%] h-[100%] p-[2%] mr-[3%] shadow bg-lightGray/10">
-        <h1 className="text-lg font-bold">문제 검색</h1>
+        <h1 className="text-lg font-semibold">문제 검색</h1>
         <CustomSelect
           options={CATEGORY_LIST}
           placeholder={CATEGORY_SELECT}
@@ -58,6 +61,7 @@ function QuizPage() {
           className="mt-[16%] float-right text-sm cursor-pointer"
         >
           초기화
+          <FontAwesomeIcon icon={faUndo} size="lg" className="ml-[2px]" />
         </button>
       </div>
 
