@@ -6,24 +6,28 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function SearchNBtn() {
   const navigate = useNavigate();
-  const moveToWritingPage = () => {
-    navigate('/writing');
+
+  const moveToQuizPage = () => {
+    navigate('/quiz');
   };
   const isLogin = useSelector((state: any) => {
     return state.auth.isLogin;
   });
-  const moveToQuizPage = () => {
-    navigate('/quiz');
+  const moveToWritingPage = () => {
+    console.log('클릭');
+    if (!isLogin) {
+      window.alert('로그인을 먼저 해주세요. 로그인 후 글을 작성할 수 있습니다.');
+    } else navigate('/writing');
   };
 
   return (
-    <div className="w-[70%] h-[60px] m-auto mt-[7%] mb-[9%]">
-      <input
-        placeholder={!isLogin ? '로그인을 먼저 해주세요.' : '생각을 공유해주세요!'}
-        className="w-[75%] h-[100%] pl-[25px] border-[1px] rounded-[10px] border-lightGray bg-lightGray/10 cursor-pointer outline-0"
+    <div className="flex flex-row w-[70%] h-[60px] m-auto mt-[7%] mb-[9%]">
+      <div
+        className="flex w-[75%] h-[100%] pl-[25px] items-center text-deepGray border-[1px] rounded-[10px] border-lightGray bg-lightGray/10 cursor-pointer"
         onClick={moveToWritingPage}
-        disabled={!isLogin}
-      />
+      >
+        {!isLogin ? '로그인을 먼저 해주세요.' : '생각을 공유해주세요!'}
+      </div>
       <button
         onClick={moveToQuizPage}
         className="w-[20%] h-[100%] ml-[5%] rounded-[80px] bg-deepGreen font-semibold text-[white] text-[21px]"
