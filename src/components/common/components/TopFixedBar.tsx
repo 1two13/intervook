@@ -13,33 +13,45 @@ import Logo from '../../../assets/logo/ms-icon-70x70.png';
 function TopFixedBar() {
   const navigate = useNavigate();
   const [menuToggle, setMenuToggle] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
   const isLogin = useSelector((state: any) => state.auth.isLogin);
 
   const moveToMainPage = () => {
     navigate('/');
   };
-
   const showMenu = () => {
     setMenuToggle(!menuToggle);
+  };
+  const showSearch = () => {
+    setIsSearch(!isSearch);
   };
 
   return (
     <>
       <div className="sticky top-0 bg-[white] z-[999]">
         <div className="flex w-[80%] h-[75px] m-auto items-center justify-between">
-          <div onClick={moveToMainPage} className="cursor-pointer text-[36px]">
-            <img src={Logo} />
-          </div>
-
-          <div className="flex items-center">
-            <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" className="text-deepGreen" />
-
+          <img src={Logo} onClick={moveToMainPage} className="cursor-pointer text-[36px]" />
+          {isSearch ? (
+            <div className="w-[25%] h-[60%] ml-[50%]">
+              <input
+                placeholder="작성자, 키워드 등을 입력해주세요."
+                className="w-[100%] h-[100%] pl-[3%] bg-lightGray/20 focus-none"
+              />
+            </div>
+          ) : null}
+          <div className="flex ml-[0.5%] items-center">
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              size="2x"
+              className="text-deepGreen cursor-pointer"
+              onClick={showSearch}
+            />
             {isLogin ? <Logged propFunction={showMenu} /> : <UnLogged />}
           </div>
         </div>
-
-        <div className="border-b-[1px] border-b-lightGray"></div>
       </div>
+
+      <div className="border-b-[1px] border-b-lightGray"></div>
 
       {/* menuToggle이 true이면서, 스크린 크기가 min보다 작을 때 드롭다운 메뉴 보여주기 */}
       {menuToggle && <Hamburger />}
