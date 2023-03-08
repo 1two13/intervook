@@ -53,7 +53,7 @@ function Profile() {
         placeholder="닉네임"
         value={nickname}
         onChange={onChangeNickname}
-        className="w-[15%] py-[3px] mt-[15px] mb-[2px] text-center text-[black] bg-lightGray/30 focus:outline-none"
+        className="w-[13%] py-[3px] mt-[15px] mb-[2px] text-center text-[black] bg-lightGray/30 focus:outline-none"
       />
       <div className="text-[red] text-sm">{message}</div>
     </div>
