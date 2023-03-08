@@ -27,7 +27,7 @@ function Introduction() {
         </div>
 
         <textarea
-          className="flex w-full mb-[11%] p-[2%] focus:outline-none placeholder:text-deepGray shadow-md bg-lightGray/10"
+          className="flex w-full mb-[13%] p-[2%] focus:outline-none placeholder:text-deepGray shadow-md bg-lightGray/10"
           placeholder="프론트엔드 개발자가 되고 싶은 고주디입니다!"
           ref={textarea}
           value={text}
