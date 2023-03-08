@@ -1,3 +1,6 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import Button from '../common/components/Button';
 
 interface IQuizCard {
@@ -7,8 +10,19 @@ interface IQuizCard {
 }
 
 function QuizCard({ category, type, title }: IQuizCard) {
+  const navigate = useNavigate();
+  const [isClick, setIsClick] = useState(false);
+
+  const clickCard = () => {
+    setIsClick(!isClick);
+    navigate('/quiz/problem');
+  };
+
   return (
-    <div className="flex flex-col h-[100%] max-h-[100px] p-[2%] justify-between shadow-md bg-lightGray/10 cursor-pointer">
+    <div
+      onClick={clickCard}
+      className="flex flex-col h-[100%] max-h-[100px] p-[2%] justify-between shadow-md bg-lightGray/10 cursor-pointer"
+    >
       <div className="flex">
         {category === 'CS' ? (
           <Button

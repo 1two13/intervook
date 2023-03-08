@@ -9,6 +9,7 @@ import MyPage from './pages/MyPage';
 import WritingPage from './pages/WritingPage';
 import CardPage from './pages/CardPage';
 import QuizPage from './pages/QuizPage';
+import QuizDetailsPage from './pages/QuizDetailsPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/writing" element={<WritingPage />} />
         <Route path="/card" element={<CardPage />} />
         <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/quiz/problem" element={<QuizDetailsPage />} />
       </Routes>
     </div>
   );

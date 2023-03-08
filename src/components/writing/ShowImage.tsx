@@ -36,7 +36,7 @@ function ShowImage() {
           onClick={() => {
             imgRef.current?.click();
           }}
-          className="flex justify-center items-center h-[45px] p-[10px] cursor-pointer bg-bgColor border-[1px] border-deepGray border-dashed rounded-[5px]"
+          className="flex justify-center items-center h-[45px] p-[10px] cursor-pointer bg-lightGray/10 border-[1px] border-deepGray border-dashed rounded-[5px]"
         >
           <FontAwesomeIcon icon={faFolder} size="lg" className="mr-[5px]" />
           파일 선택 (최대 3개)
