@@ -9,7 +9,8 @@ module.exports = {
       lightGreen: '#dcedc8',
       deepGray: '#B4B4B4',
       lightGray: '#D9D9D9',
-      bgColor: '#F7F7F7',
+      // lightGray/10
+      bgColor: '#FDFDFD',
       purple: '#E1BEE7',
       blue: '#61DAFB',
     },
