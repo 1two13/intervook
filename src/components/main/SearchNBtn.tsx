@@ -14,7 +14,6 @@ function SearchNBtn() {
     return state.auth.isLogin;
   });
   const moveToWritingPage = () => {
-    console.log('클릭');
     if (!isLogin) {
       window.alert('로그인을 먼저 해주세요. 로그인 후 글을 작성할 수 있습니다.');
     } else navigate('/writing');
