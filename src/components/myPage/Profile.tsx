@@ -1,12 +1,16 @@
 import { useRef, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { myPageSlice } from '../../redux-toolkit/slices/myPageSlice';
 
 function Profile() {
+  const dispatch = useDispatch();
+  const nickname = useSelector((state: any) => state.myPage.setNickname);
+  const imgRef = useRef<HTMLInputElement>(null);
   const [imageUrl, setImageUrl] = useState(
     'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'
   );
   const [message, setMessage] = useState('');
-  const [nickname, setNickname] = useState('');
-  const imgRef = useRef<HTMLInputElement>(null);
 
   const onChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = (e.target.files as FileList)[0];
@@ -23,8 +27,7 @@ function Profile() {
     if (e.target.value.length < 2 || e.target.value.length > 7) {
       setMessage('2글자 이상 7글자 미만으로 입력해주세요.🥺');
     } else setMessage('');
-
-    setNickname(e.target.value.slice(0, 7));
+    dispatch(myPageSlice.actions.setNickname(e.target.value.slice(0, 7)));
   };
 
   return (
