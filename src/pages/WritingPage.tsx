@@ -47,7 +47,7 @@ function WritingPage() {
   };
 
   return (
-    <div className="w-[70%] m-auto border-y-0 border-[1px] border-lightGray bg-lightGray/5">
+    <div className="w-[70%] m-auto border-y-0 border-[1px] border-lightGray">
       <Buttons />
 
       <div className="pt-[5%] pl-[7%] pb-[3%]">

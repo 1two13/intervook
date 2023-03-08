@@ -28,7 +28,7 @@ function TopFixedBar() {
 
   return (
     <>
-      <div className="sticky top-0 bg-[white] z-[999]">
+      <div className="sticky top-0 bg-[white] z-[999] border-b-[1px] border-lightGray">
         <div className="flex w-[80%] h-[75px] m-auto items-center justify-between">
           <img src={Logo} onClick={moveToMainPage} className="cursor-pointer text-[36px]" />
           {isSearch ? (
@@ -50,8 +50,6 @@ function TopFixedBar() {
           </div>
         </div>
       </div>
-
-      <div className="border-b-[1px] border-b-lightGray"></div>
 
       {/* menuToggle이 true이면서, 스크린 크기가 min보다 작을 때 드롭다운 메뉴 보여주기 */}
       {menuToggle && <Hamburger />}
