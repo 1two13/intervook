@@ -7,6 +7,7 @@ import Email from '../components/join/Email';
 import Password from '../components/join/Password';
 import Button from '../components/join/Button';
 import CheckPassword from '../components/join/CheckPassword';
+import joinApi from '../api/joinApi';
 
 function JoinPage() {
   const navigate = useNavigate();
@@ -20,17 +21,7 @@ function JoinPage() {
 
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const fetchUrl = `/api/auth/join?email=${email}&password=${password}&nickname=${nickname}`;
-    fetch(fetchUrl, {
-      method: 'POST',
-    })
-      .then((res) => {
-        console.log(res);
-        return res.json();
-      })
-      .then((res) => console.log(res));
-
+    joinApi({ email, password, nickname });
     if (isValidate) navigate('/');
   };
 
