@@ -21,8 +21,8 @@ function DropDownMenu() {
   return (
     <>
       {showMenu && (
-        <div className="bg-lightGray/10 border-[1px] border-deepGray">
-          <div className="flex h-[70px] bg-[white] pl-[10px] items-center">
+        <div className="bg-bgColor border-[1px] border-lightGray">
+          <div className="flex h-[70px] bg-[white] pl-[10px] items-center border-b-[1px] border-lightGray">
             <img src={imageUrl} className="w-[30px] h-[30px] rounded-[50%]" />
             <div className="ml-[3px] cursor-pointer" onClick={moveToMyPage}>
               고토리
