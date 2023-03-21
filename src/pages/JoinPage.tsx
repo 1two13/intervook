@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import LoginJoinBox from '../components/common/components/LoginJoinBox';
 import H1 from '../components/common/components/H1';
 import Name from '../components/join/Name';
 import Email from '../components/join/Email';

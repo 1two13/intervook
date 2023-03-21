@@ -1,5 +1,4 @@
 import H1 from '../components/common/components/H1';
-import LoginJoinBox from '../components/common/components/LoginJoinBox';
 import Form from '../components/login/Form';
 import SocialLogin from '../components/login/SocialLogin';
 
