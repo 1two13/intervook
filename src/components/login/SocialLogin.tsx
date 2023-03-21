@@ -15,7 +15,7 @@ function SocialLogin() {
         <img src={kakaoLogin} alt="카카오 로그인 버튼" className="w-[88%] m-auto mb-[2%]" />
       </a>
       <a href={''} className="mt-[2%]">
-        <img src={naverLogin} alt="네이버 로그인 버튼" className="w-[88%] h-[30%] m-auto" />
+        <img src={naverLogin} alt="네이버 로그인 버튼" className="w-[50%] m-auto" />
       </a>
     </div>
   );
